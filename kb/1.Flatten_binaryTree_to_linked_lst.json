@@ -1,0 +1,16 @@
+{
+  "title": "Flatten Binary Tree to Linked List",
+  "pattern": "Tree Traversal — In-place Pointer Rewiring (Recursive or Morris-style)",
+  "coreIdea": "Rearrange the tree in-place so every node's right pointer follows preorder sequence and left pointer is always null. Can be done recursively by flattening right and left subtrees first then reconnecting, or iteratively using Morris-style threading to achieve O(1) extra space.",
+  "recognitionCues": [
+    "asks to convert a tree into a list-like structure in-place",
+    "preorder traversal order requested",
+    "constraint mentions O(1) or constant extra space, hinting at Morris-style"
+  ],
+  "approach": "Recursive: flatten the right subtree first, then the left subtree. Detach the left subtree and attach it as the new right child. Walk to the tail of this newly attached subtree, then attach the original (already flattened) right subtree at that tail. Set left to null. Morris-style: for each node, if it has a left child, find the rightmost node in the left subtree and attach the current right subtree there. Move left subtree to right, set left to null, move to next node.",
+  "techniques": ["recursion", "morris-traversal", "in-place-pointer-manipulation"],
+  "timeComplexity": "O(n) for both approaches",
+  "spaceComplexity": "O(h) recursive due to recursion stack, O(1) for Morris-style",
+  "difficulty": "Medium",
+  "tags": ["binary-tree", "recursion", "morris-traversal", "in-place"]
+}
