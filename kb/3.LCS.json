@@ -1,0 +1,12 @@
+{
+  "title": "Longest Common Subsequence",
+  "pattern": "Dynamic Programming — DP on Strings (2D)",
+  "coreIdea": "Find the length of the longest subsequence common to two strings, where characters need not be contiguous but must retain relative order. Build a 2D table comparing prefixes of both strings.",
+  "recognitionCues": ["two strings/sequences given", "asks for longest common subsequence, not substring", "order matters but not contiguity"],
+  "approach": "Create a 2D dp table of size (m+1) x (n+1). If characters match, dp[i][j] = dp[i-1][j-1] + 1. If not, dp[i][j] = max(dp[i-1][j], dp[i][j-1]). Answer is dp[m][n].",
+  "techniques": ["2d-dp", "string-comparison"],
+  "timeComplexity": "O(m*n)",
+  "spaceComplexity": "O(m*n), can optimize to O(n)",
+  "difficulty": "Medium",
+  "tags": ["dp", "strings", "lcs"]
+}

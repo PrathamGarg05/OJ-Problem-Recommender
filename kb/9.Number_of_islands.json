@@ -1,0 +1,12 @@
+{
+  "title": "Number of Islands",
+  "pattern": "Graph Traversal — BFS/DFS on Grid",
+  "coreIdea": "Count the number of connected groups of land cells ('1's) in a grid, where connectivity is defined by adjacent (up/down/left/right) land cells. Treat the grid as an implicit graph and count connected components.",
+  "recognitionCues": ["2D grid given with land/water or similar binary values", "asks to count connected regions or groups", "adjacency defined by 4-directional neighbors"],
+  "approach": "Iterate through every cell. When an unvisited land cell is found, increment island count and run BFS or DFS from that cell, marking all connected land cells as visited so they aren't recounted.",
+  "techniques": ["bfs", "dfs", "grid-traversal", "connected-components"],
+  "timeComplexity": "O(rows * cols)",
+  "spaceComplexity": "O(rows * cols) for visited tracking / recursion stack",
+  "difficulty": "Medium",
+  "tags": ["graph", "bfs", "dfs", "grid"]
+}

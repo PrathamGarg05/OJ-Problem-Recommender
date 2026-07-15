@@ -1,0 +1,12 @@
+{
+  "title": "Koko Eating Bananas",
+  "pattern": "Binary Search on Answer",
+  "coreIdea": "Instead of searching in an array, binary search over the range of possible answer values (eating speed) to find the minimum speed that satisfies a feasibility condition (finishing within h hours), checked using a helper feasibility function.",
+  "recognitionCues": ["asks for minimum/maximum value satisfying a condition", "feasibility can be checked in a monotonic way (if speed k works, any speed > k also works)", "not searching within a given array directly"],
+  "approach": "Binary search between 1 and max(piles). For each candidate speed (mid), calculate total hours needed by summing ceil(pile/speed) for each pile. If hours <= h, try smaller speed (search left); else search right. Converge to minimum feasible speed.",
+  "techniques": ["binary-search-on-answer", "feasibility-check"],
+  "timeComplexity": "O(n log(max(piles)))",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": ["binary-search", "search-on-answer"]
+}

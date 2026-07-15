@@ -1,0 +1,12 @@
+{
+  "title": "Sliding Window Maximum",
+  "pattern": "Queue — Monotonic Deque",
+  "coreIdea": "Find the maximum element in every contiguous window of size k as it slides across the array. A monotonic decreasing deque maintains only elements that could still be the max for future windows, giving O(n) overall time instead of O(n*k) brute force.",
+  "recognitionCues": ["asks for max/min in every sliding window of fixed size k", "brute force is O(n*k), problem hints at O(n) solution", "deque or double-ended structure is a strong signal"],
+  "approach": "Maintain a deque of indices, kept in decreasing order of their values. For each new element, remove indices from the back whose values are smaller (they can never be the max again), remove indices from front that are out of the current window range, then the front of deque is the max for the current window.",
+  "techniques": ["monotonic-deque", "sliding-window"],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(k)",
+  "difficulty": "Hard",
+  "tags": ["queue", "deque", "sliding-window", "monotonic-deque"]
+}

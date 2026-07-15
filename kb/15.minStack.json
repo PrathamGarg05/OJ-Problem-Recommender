@@ -1,0 +1,12 @@
+{
+  "title": "Min Stack",
+  "pattern": "Stack — Auxiliary Tracking Structure",
+  "coreIdea": "Design a stack that supports push, pop, top, and retrieving the minimum element all in O(1) time. Achieved by maintaining a second stack that tracks the minimum value at each point alongside the main stack.",
+  "recognitionCues": ["asks to design a data structure with O(1) operations", "getMin or similar constant-time min/max retrieval required alongside standard stack operations"],
+  "approach": "Maintain two stacks: the main stack for actual values, and a min-stack where each push also pushes the current minimum (min of new value and previous min-stack top). Pop removes from both stacks together, keeping them in sync.",
+  "techniques": ["stack", "auxiliary-data-structure"],
+  "timeComplexity": "O(1) for all operations",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Medium",
+  "tags": ["stack", "design"]
+}
