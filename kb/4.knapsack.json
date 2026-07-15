@@ -1,12 +1,12 @@
 {
-  "title": "Longest Common Subsequence",
-  "pattern": "Dynamic Programming — DP on Strings (2D)",
-  "coreIdea": "Find the length of the longest subsequence common to two strings, where characters need not be contiguous but must retain relative order. Build a 2D table comparing prefixes of both strings.",
-  "recognitionCues": ["two strings/sequences given", "asks for longest common subsequence, not substring", "order matters but not contiguity"],
-  "approach": "Create a 2D dp table of size (m+1) x (n+1). If characters match, dp[i][j] = dp[i-1][j-1] + 1. If not, dp[i][j] = max(dp[i-1][j], dp[i][j-1]). Answer is dp[m][n].",
-  "techniques": ["2d-dp", "string-comparison"],
-  "timeComplexity": "O(m*n)",
-  "spaceComplexity": "O(m*n), can optimize to O(n)",
+  "title": "0/1 Knapsack",
+  "pattern": "Dynamic Programming — 0/1 Knapsack",
+  "coreIdea": "Given items with weights and values, maximize total value without exceeding a weight capacity, where each item can be used at most once. For each item, decide whether including it improves the result.",
+  "recognitionCues": ["each item can be used at most once", "weight/capacity constraint given", "maximize value subject to constraint"],
+  "approach": "Create dp table of size (n+1) x (capacity+1). For each item, for each capacity, either skip the item (dp[i-1][cap]) or take it if it fits (value + dp[i-1][cap-weight]). Take the max of both options.",
+  "techniques": ["2d-dp", "knapsack"],
+  "timeComplexity": "O(n * capacity)",
+  "spaceComplexity": "O(n * capacity), can optimize to O(capacity)",
   "difficulty": "Medium",
-  "tags": ["dp", "strings", "lcs"]
+  "tags": ["dp", "knapsack", "subset-selection"]
 }
