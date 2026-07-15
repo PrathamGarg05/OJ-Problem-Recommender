@@ -1,12 +1,18 @@
-from langchain_core.prompts import PromptTemplate
 import os
 from dotenv import load_dotenv
-from langchain_groq import ChatGroq
 from src.config import LLM_MODEL
-from src.retriever import retrieve
+
+import streamlit as st
 
 load_dotenv()
-groq_api_key = os.getenv("GROQ_API_KEY")
+@st.cache_resource
+def get_llm():
+    from langchain_groq import ChatGroq
+    GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+    return ChatGroq(
+        model=LLM_MODEL,
+        api_key=GROQ_API_KEY,
+    )
 
 def format_context(context):
     formatted_entries = []
@@ -19,29 +25,36 @@ def format_context(context):
                     value = ', '.join(value)
                 lines.append(f"{key}: {value}")
         formatted_entries.append('\n'.join(lines))
-    return '\n'.join(formatted_entries)
+    return '\n\n'.join(formatted_entries)
 
 def get_prompt(query, context):
-    prompt_template = """You are an expert competitive programming problem recommender. Given a query and a context, you will recommend the most relevant competitive programming problems from the context. The context contains information about various problems, including their titles, patterns, core ideas, recognition cues, approaches, techniques, time and space complexities, difficulties, and tags.
+    from langchain_core.prompts import PromptTemplate
+    
+    prompt_template = """You are an expert competitive programming mentor.
 
-    Query: {query}
+    You are given a user's query and a list of retrieved problems.
 
-    Context: {context}
+    Your job is to rank the retrieved problems by relevance.
 
-    Give the most relevant competitive programming problems from the context that match the query. For each recommended problem, provide its title, pattern, core idea, recognition cues, approach, techniques, time and space complexities, difficulty, and tags. If there are fewer than 5 relevant problems, provide all of them.
-    Give only the problems given in the context that match the query. Don't generate any problems that are not in the context. If no relevant problems are found, respond with "No relevant problems found."
+    Rules:
+    - Recommend ONLY problems that appear in the context.
+    - Never invent a new problem.
+    - Explain briefly why each problem is relevant.
+    - If multiple problems are similar, order them from most to least relevant.
+    - If no retrieved problem is relevant, reply exactly:
+    "No relevant problems found."
 
-    Recommendations:
+    Query:
+    {query}
+
+    Retrieved Problems:
+    {context}
     """
-    prompt = PromptTemplate.from_template(prompt_template)
-    return prompt.format(query=query, context=context)
+    return prompt_template.format(query=query, context=context)
 
 def generate_recommendations(query, context):
-    context = format_context(context)
-    llm = ChatGroq(
-        model=LLM_MODEL,
-        api_key=groq_api_key,
-    )
-    prompt = get_prompt(query, context)
+    context_str = format_context(context["metadatas"][0])
+    llm = get_llm()
+    prompt = get_prompt(query, context_str)
     response = llm.invoke(prompt)
     return response

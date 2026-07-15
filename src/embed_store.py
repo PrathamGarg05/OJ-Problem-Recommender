@@ -1,8 +1,10 @@
 import chromadb
-from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 from src.config import CHROMA_PATH, COLLECTION_NAME, EMBEDDING_MODEL
+import streamlit as st
 
+@st.cache_resource
 def get_collection():
+    from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction   
     client = chromadb.PersistentClient(path=CHROMA_PATH)
     ef = SentenceTransformerEmbeddingFunction(model_name=EMBEDDING_MODEL)
     return client.get_or_create_collection(name=COLLECTION_NAME, embedding_function=ef)

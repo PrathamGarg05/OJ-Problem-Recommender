@@ -1,8 +1,13 @@
 import streamlit as st
-from src.retriever import retrieve
+import time
+
+t = time.time()
 from src.generate import generate_recommendations
+print("generate.py TOTAL:", time.time() - t)
 
-
+t = time.time()
+from src.retriever import retrieve
+print("retriever.py TOTAL:", time.time() - t)
 def recommend(query):
     with st.spinner("Searching similar problems..."):
         context = retrieve(query)
@@ -19,7 +24,6 @@ def recommend(query):
         else:
             st.info("No context retrieved.")
 
-
 st.set_page_config(
     page_title="OJ Problem Recommender",
     page_icon="💻",
@@ -31,7 +35,6 @@ st.title("💻 OJ Problem Recommender")
 query = st.text_input("Enter your problem")
 
 if st.button("Get Recommendations"):
-
     if not query.strip():
         st.warning("Please enter a problem.")
         st.stop()
