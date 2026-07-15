@@ -28,7 +28,8 @@ def get_prompt(query, context):
 
     Context: {context}
 
-    Based on the query and the context, recommend the most relevant competitive programming problems. Provide a brief explanation for each recommendation.
+    Give the most relevant competitive programming problems from the context that match the query. For each recommended problem, provide its title, pattern, core idea, recognition cues, approach, techniques, time and space complexities, difficulty, and tags. If there are fewer than 5 relevant problems, provide all of them.
+    Give only the problems given in the context that match the query. Don't generate any problems that are not in the context. If no relevant problems are found, respond with "No relevant problems found."
 
     Recommendations:
     """
@@ -44,8 +45,3 @@ def generate_recommendations(query, context):
     prompt = get_prompt(query, context)
     response = llm.invoke(prompt)
     return response
-
-query = "I want to learn about dynamic programming problems that involve optimizing a value based on constraints."
-context = retrieve(query)
-recommendations = generate_recommendations(query, context)
-print("Recommendations:\n", recommendations.content)
