@@ -1,2 +1,5 @@
 chromadb
 sentence_transformers
+langchain-core
+langchain-groq
+python-dotenv
