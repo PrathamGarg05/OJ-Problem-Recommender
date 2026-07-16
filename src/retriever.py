@@ -1,5 +1,5 @@
 from src.embed_store import get_collection
-from src.config import TOP_K
+from src.config import TOP_K, SIMILARITY_THRESHOLD
 
 def retrieve(query, top_k = TOP_K):
     collection = get_collection()
@@ -7,5 +7,8 @@ def retrieve(query, top_k = TOP_K):
         query_texts=[query],
         n_results=top_k
     )
+    filtered_results = [i for i , d in enumerate(result['distances'][0]) if d < SIMILARITY_THRESHOLD]
+    result['metadatas'][0] = [result['metadatas'][0][i] for i in filtered_results]
+    result['documents'][0] = [result['documents'][0][i] for i in filtered_results]
     return result
 
