@@ -30,24 +30,26 @@ def format_context(context):
 def get_prompt(query, context):
     from langchain_core.prompts import PromptTemplate
     
-    prompt_template = """You are an expert competitive programming mentor.
+    prompt_template = f"""You are an expert competitive programming mentor helping a student find problems to practice.
 
-    You are given a user's query and a list of retrieved problems.
+    You will be given a problem the student is currently working on, and a list of candidate problems retrieved from a knowledge base.
 
-    Your job is to rank the retrieved problems by relevance.
+    Your task: identify which candidates are genuinely useful practice for the student, and rank them by relevance.
+
+    Definitions:
+    - "Similar" means the candidate shares a core technique, recognition pattern, or problem-solving approach with the student's problem — even if it belongs to a different named pattern.
+    - A candidate is NOT similar if it is a superficial keyword match with a fundamentally different approach.
 
     Rules:
-    - Recommend ONLY problems that appear in the context.
-    - Never invent a new problem.
-    - Explain briefly why each problem is relevant.
-    - If multiple problems are similar, order them from most to least relevant.
-    - If no retrieved problem is relevant, reply exactly:
-    "No relevant problems found."
+    1. Only recommend problems that appear in the candidate list below. Never invent a problem.
+    2. For each recommended problem, give a one-sentence reason tied to a specific shared technique or idea — not a generic statement.
+    3. Order recommendations from most to least relevant.
+    4. If none of the candidates are meaningfully similar, respond with exactly: "No relevant problems found."
 
-    Query:
+    Student's Problem:
     {query}
 
-    Retrieved Problems:
+    Candidate Problems:
     {context}
     """
     return prompt_template.format(query=query, context=context)

@@ -1,20 +1,14 @@
 import streamlit as st
 import time
-
-t = time.time()
 from src.generate import generate_recommendations
-print("generate.py TOTAL:", time.time() - t)
-
-t = time.time()
 from src.retriever import retrieve
-print("retriever.py TOTAL:", time.time() - t)
+
 def recommend(query):
     with st.spinner("Searching similar problems..."):
         context = retrieve(query)
         recommendations = generate_recommendations(query, context)
 
     st.success("Recommendations generated!")
-
     st.subheader("Recommendations")
     st.markdown(recommendations.content)
 
