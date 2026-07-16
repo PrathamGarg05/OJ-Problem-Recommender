@@ -1,0 +1,22 @@
+{
+  "title": "Binary Tree Level Order Traversal",
+  "pattern": "Tree \u00e2\u20ac\u201d BFS Level-by-Level",
+  "coreIdea": "Traverse a binary tree level by level, grouping nodes by depth, using a queue to process nodes in FIFO order and tracking level boundaries by processing the queue in size-based batches.",
+  "recognitionCues": [
+    "asks for traversal grouped by level/depth",
+    "output expected as list of lists, one per level"
+  ],
+  "approach": "Use a queue starting with the root. While queue is not empty, record current queue size (number of nodes at this level), process exactly that many nodes (dequeue, add value to current level list, enqueue children), then append the level list to results.",
+  "techniques": [
+    "bfs",
+    "queue"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n) for queue and output",
+  "difficulty": "Medium",
+  "tags": [
+    "tree",
+    "bfs",
+    "binary-tree"
+  ]
+}

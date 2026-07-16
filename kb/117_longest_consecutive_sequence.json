@@ -1,0 +1,21 @@
+{
+  "title": "Longest Consecutive Sequence",
+  "pattern": "Array/Hashset \u00e2\u20ac\u201d O(n) Sequence Detection",
+  "coreIdea": "Find the length of the longest run of consecutive integers in an unsorted array in O(n), by using a hashset for O(1) lookups and only starting a sequence count from numbers that are confirmed sequence-starts (i.e., num-1 doesn't exist in the set).",
+  "recognitionCues": [
+    "asks for longest consecutive sequence, array unsorted",
+    "O(n) time explicitly required, ruling out sorting first (which would be O(n log n))"
+  ],
+  "approach": "Add all numbers to a hashset. For each number, only start counting a sequence if num-1 is NOT in the set (confirming it's a sequence start, avoiding redundant work). From each valid start, keep checking num+1, num+2... incrementing length while they exist in the set. Track the max length found.",
+  "techniques": [
+    "hashset",
+    "sequence-detection"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Medium",
+  "tags": [
+    "array",
+    "hashset"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Daily Temperatures",
+  "pattern": "Stack \u00e2\u20ac\u201d Monotonic Stack",
+  "coreIdea": "For each day, find how many days until a warmer temperature occurs, using a monotonic decreasing stack of indices to efficiently match each day with its next warmer day.",
+  "recognitionCues": [
+    "asks for distance/count until a next greater value",
+    "brute force O(n^2) hinted to be improved to O(n)"
+  ],
+  "approach": "Traverse temperatures, maintaining a stack of indices with decreasing temperature values. For each new temperature, while it's greater than the temperature at the stack's top index, pop and record the day difference as the answer for that popped index. Push current index.",
+  "techniques": [
+    "monotonic-stack"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Medium",
+  "tags": [
+    "stack",
+    "monotonic-stack",
+    "array"
+  ]
+}

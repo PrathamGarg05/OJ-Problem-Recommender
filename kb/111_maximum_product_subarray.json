@@ -1,0 +1,22 @@
+{
+  "title": "Maximum Product Subarray",
+  "pattern": "Dynamic Programming \u00e2\u20ac\u201d Track Both Max and Min Running Products",
+  "coreIdea": "Find the contiguous subarray with the maximum product, tracking BOTH the running maximum and minimum product at each position, since a negative number can flip the smallest product into the largest (and vice versa).",
+  "recognitionCues": [
+    "similar to Kadane's but for PRODUCT not sum",
+    "array may contain negative numbers and zeros, complicating simple max tracking"
+  ],
+  "approach": "Track curMax and curMin, both initialized to the first element. For each subsequent element, compute candidates (element, curMax*element, curMin*element); curMax becomes the max of these three, curMin becomes the min. Update global max with curMax at each step. Swap curMax/curMin before updating if element is negative (or just include all three candidates in the max/min calc).",
+  "techniques": [
+    "dp",
+    "kadane-variant",
+    "min-max-tracking"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "dp",
+    "array"
+  ]
+}

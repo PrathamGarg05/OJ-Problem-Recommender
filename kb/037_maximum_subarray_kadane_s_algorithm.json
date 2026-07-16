@@ -1,0 +1,22 @@
+{
+  "title": "Maximum Subarray (Kadane's Algorithm)",
+  "pattern": "Array \u00e2\u20ac\u201d Kadane's Algorithm (DP-lite)",
+  "coreIdea": "Find the contiguous subarray with the maximum sum by tracking a running sum, resetting it whenever it becomes negative (since a negative running sum only hurts future sums), and tracking the max sum seen.",
+  "recognitionCues": [
+    "asks for maximum sum of a contiguous subarray",
+    "array may contain negative numbers"
+  ],
+  "approach": "Track current_sum and max_sum, both initialized to the first element. For each subsequent element, current_sum = max(element, current_sum + element), then max_sum = max(max_sum, current_sum).",
+  "techniques": [
+    "kadanes-algorithm",
+    "single-pass"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "array",
+    "dp",
+    "kadane"
+  ]
+}

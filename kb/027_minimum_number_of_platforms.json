@@ -1,0 +1,25 @@
+{
+  "title": "Minimum Number of Platforms",
+  "pattern": "Greedy \u00e2\u20ac\u201d Interval Overlap Counting",
+  "coreIdea": "Find the minimum number of platforms needed so that no train has to wait, by finding the maximum number of trains present at the station simultaneously. Sort arrival and departure times separately, then sweep through counting overlaps.",
+  "recognitionCues": [
+    "arrival and departure/start and end times given for multiple intervals",
+    "asks for minimum resources needed to handle all overlaps simultaneously"
+  ],
+  "approach": "Sort arrival times and departure times independently. Use two pointers over both sorted lists; increment platform count when the next event is an arrival before the current earliest departure, decrement (move departure pointer) otherwise. Track the maximum platform count seen.",
+  "techniques": [
+    "greedy",
+    "two-pointers",
+    "sorting",
+    "interval-overlap"
+  ],
+  "timeComplexity": "O(n log n)",
+  "spaceComplexity": "O(1) extra (excluding sort)",
+  "difficulty": "Medium",
+  "tags": [
+    "greedy",
+    "intervals",
+    "sorting",
+    "two-pointers"
+  ]
+}

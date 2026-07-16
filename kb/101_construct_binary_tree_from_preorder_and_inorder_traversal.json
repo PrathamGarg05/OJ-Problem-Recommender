@@ -1,0 +1,23 @@
+{
+  "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+  "pattern": "Tree \u00e2\u20ac\u201d Recursive Reconstruction using Traversal Properties",
+  "coreIdea": "Rebuild a binary tree from its preorder and inorder traversal sequences by using the fact that preorder's first element is always the root, and that root's position in inorder splits the array into left and right subtree elements.",
+  "recognitionCues": [
+    "given two traversal sequences, asks to reconstruct the original tree",
+    "classic property: preorder gives root first, inorder gives left/right split"
+  ],
+  "approach": "Use a hashmap to store inorder value-to-index for O(1) root-split lookup. Recursively: take the next unused element from preorder as the current root, find its index in inorder to determine the split point, recursively build the left subtree from the inorder-left portion, then the right subtree from the inorder-right portion, using a shared preorder index pointer that advances with each call.",
+  "techniques": [
+    "recursion",
+    "hashmap",
+    "tree-reconstruction"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n) for hashmap and recursion stack",
+  "difficulty": "Medium",
+  "tags": [
+    "tree",
+    "binary-tree",
+    "recursion"
+  ]
+}

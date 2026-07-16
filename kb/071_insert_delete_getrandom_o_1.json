@@ -1,0 +1,24 @@
+{
+  "title": "Insert Delete GetRandom O(1)",
+  "pattern": "Design \u00e2\u20ac\u201d Array + Hashmap Index Tracking",
+  "coreIdea": "Design a structure supporting O(1) insert, delete, and get-random-element, by combining an array (for O(1) random access) with a hashmap tracking each value's index in the array, and using a swap-with-last-then-pop trick for O(1) deletion.",
+  "recognitionCues": [
+    "requires O(1) for insert, delete, AND random access all together",
+    "array alone gives O(1) random access but O(n) delete; hashmap alone gives O(1) delete but no random access \u00e2\u20ac\u201d combining both is the key insight"
+  ],
+  "approach": "Maintain an array of values and a hashmap from value to its index in the array. Insert: append to array, record index in hashmap. Delete: swap the target element with the last array element, update the swapped element's index in hashmap, pop the last element, remove target from hashmap. GetRandom: return array[random index].",
+  "techniques": [
+    "hashmap",
+    "array",
+    "swap-and-pop",
+    "design"
+  ],
+  "timeComplexity": "O(1) for all operations",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Medium",
+  "tags": [
+    "design",
+    "array",
+    "hashmap"
+  ]
+}

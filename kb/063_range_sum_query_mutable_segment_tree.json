@@ -1,0 +1,23 @@
+{
+  "title": "Range Sum Query \u00e2\u20ac\u201d Mutable (Segment Tree)",
+  "pattern": "Segment Tree \u00e2\u20ac\u201d Range Query with Point Updates",
+  "coreIdea": "Support efficient range-sum queries and point updates on an array using a segment tree, where each node represents the sum of a range, allowing both operations in O(log n) instead of O(n).",
+  "recognitionCues": [
+    "asks for both range queries AND updates on an array, repeated multiple times",
+    "naive recomputation per query would be too slow, hinting at segment tree or BIT"
+  ],
+  "approach": "Build a segment tree where each leaf represents one array element and each internal node holds the sum of its children's range. Update: change a leaf value, then propagate the change up to all ancestor nodes. Query: recursively combine sums from tree nodes whose range fully or partially overlaps the query range.",
+  "techniques": [
+    "segment-tree",
+    "range-query",
+    "point-update"
+  ],
+  "timeComplexity": "O(log n) per update/query, O(n) to build",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Hard",
+  "tags": [
+    "segment-tree",
+    "array",
+    "advanced-data-structure"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Top K Frequent Elements",
+  "pattern": "Heap \u00e2\u20ac\u201d Frequency Counting with Min-Heap",
+  "coreIdea": "Find the k most frequently occurring elements in an array by first counting frequencies with a hashmap, then using a min-heap of size k to keep only the top k frequent elements.",
+  "recognitionCues": [
+    "asks for top k frequent/occurring elements",
+    "requires counting occurrences before ranking"
+  ],
+  "approach": "Build a frequency hashmap of element to count. Push (frequency, element) pairs onto a min-heap, popping the smallest whenever heap size exceeds k. Remaining heap elements are the top k frequent, extracted at the end.",
+  "techniques": [
+    "hashmap",
+    "min-heap",
+    "priority-queue"
+  ],
+  "timeComplexity": "O(n log k)",
+  "spaceComplexity": "O(n) for frequency map, O(k) for heap",
+  "difficulty": "Medium",
+  "tags": [
+    "heap",
+    "hashmap",
+    "priority-queue"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Missing Number",
+  "pattern": "Bit Manipulation / Math \u00e2\u20ac\u201d XOR or Sum Formula",
+  "coreIdea": "Find the single missing number from a sequence of 0 to n by either XOR-ing all array elements with all numbers 0 to n (pairs cancel, leaving the missing number), or by computing expected sum minus actual sum.",
+  "recognitionCues": [
+    "array contains n distinct numbers from range [0,n] with exactly one missing",
+    "O(n) time, O(1) space expected"
+  ],
+  "approach": "XOR approach: XOR together all numbers from 0 to n AND all elements in the array; matching pairs cancel to 0, leaving only the missing number. Alternative: compute expected sum = n*(n+1)/2, subtract actual array sum, the difference is the missing number.",
+  "techniques": [
+    "xor",
+    "math",
+    "sum-formula"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Easy",
+  "tags": [
+    "bit-manipulation",
+    "math",
+    "array"
+  ]
+}

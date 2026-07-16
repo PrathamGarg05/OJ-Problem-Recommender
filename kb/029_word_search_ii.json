@@ -1,0 +1,25 @@
+{
+  "title": "Word Search II",
+  "pattern": "Trie + Backtracking \u00e2\u20ac\u201d DFS with Prefix Pruning",
+  "coreIdea": "Find all words from a given list that can be formed on a character grid via adjacent cells. Building a trie of the word list allows DFS from each grid cell to prune paths early whenever the current path is not a valid prefix of any word.",
+  "recognitionCues": [
+    "multiple target words given (not just one) to search in a grid",
+    "brute-force DFS per word would be too slow, hinting at trie-based optimization"
+  ],
+  "approach": "Build a trie from all target words. For each cell in the grid, run DFS, at each step checking if the current path forms a valid prefix in the trie (using trie traversal alongside DFS instead of separate string matching). If a complete word is found (end-of-word marker reached), add it to results. Backtrack after each cell to try other paths.",
+  "techniques": [
+    "trie",
+    "backtracking",
+    "dfs",
+    "prefix-pruning"
+  ],
+  "timeComplexity": "O(rows * cols * 4^L) bounded further by trie pruning",
+  "spaceComplexity": "O(total characters in word list) for trie, O(L) recursion depth",
+  "difficulty": "Hard",
+  "tags": [
+    "trie",
+    "backtracking",
+    "dfs",
+    "grid"
+  ]
+}

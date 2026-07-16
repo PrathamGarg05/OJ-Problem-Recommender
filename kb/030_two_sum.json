@@ -1,0 +1,21 @@
+{
+  "title": "Two Sum",
+  "pattern": "Array \u00e2\u20ac\u201d Hashmap Complement Lookup",
+  "coreIdea": "Find two indices in an array whose values sum to a target, by storing each visited value in a hashmap and checking if its complement (target - value) has already been seen.",
+  "recognitionCues": [
+    "asks for a pair summing to a target",
+    "single pass with O(n) hinted over brute force O(n^2)"
+  ],
+  "approach": "Traverse the array once. For each element, compute complement = target - element. If complement exists in the hashmap, return its stored index and current index. Otherwise, store current element's value and index in the hashmap.",
+  "techniques": [
+    "hashmap",
+    "single-pass"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Easy",
+  "tags": [
+    "array",
+    "hashmap"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Find Median from Data Stream",
+  "pattern": "Design \u00e2\u20ac\u201d Two Heaps (Max-Heap + Min-Heap)",
+  "coreIdea": "Maintain the running median of a stream of numbers by splitting elements into two balanced heaps: a max-heap holding the smaller half, and a min-heap holding the larger half, so the median is always derivable from their tops.",
+  "recognitionCues": [
+    "asks for median of a continuously growing stream, not a fixed array",
+    "requires efficient insertion and median retrieval interleaved"
+  ],
+  "approach": "Maintain a max-heap for the lower half and a min-heap for the upper half, kept balanced in size (differ by at most 1). On insert, add to one heap then rebalance by moving the top element to the other heap if sizes become unequal. Median is the top of the larger heap, or the average of both tops if equal size.",
+  "techniques": [
+    "max-heap",
+    "min-heap",
+    "design",
+    "two-heaps"
+  ],
+  "timeComplexity": "O(log n) per insertion, O(1) for median retrieval",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Hard",
+  "tags": [
+    "design",
+    "heap",
+    "two-heaps"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Longest Substring Without Repeating Characters",
+  "pattern": "Sliding Window (variable size)",
+  "coreIdea": "Find the longest substring with all unique characters by expanding a window's right edge and shrinking its left edge whenever a duplicate character is encountered within the current window.",
+  "recognitionCues": [
+    "contiguous substring/subarray required",
+    "uniqueness or distinct-element constraint",
+    "asks for longest/shortest satisfying a condition"
+  ],
+  "approach": "Use a hashmap tracking the last seen index of each character. Expand right pointer; if the current character's last seen index is within the current window, move left pointer past that index. Update max length at each step.",
+  "techniques": [
+    "two-pointer",
+    "hashmap",
+    "sliding-window"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(min(n, charset size))",
+  "difficulty": "Medium",
+  "tags": [
+    "strings",
+    "sliding-window",
+    "hashmap"
+  ]
+}

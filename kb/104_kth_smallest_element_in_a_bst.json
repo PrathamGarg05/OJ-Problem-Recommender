@@ -1,0 +1,22 @@
+{
+  "title": "Kth Smallest Element in a BST",
+  "pattern": "Tree \u00e2\u20ac\u201d Inorder Traversal (Sorted Order Property)",
+  "coreIdea": "Find the kth smallest element by exploiting the BST property that an inorder traversal visits nodes in sorted ascending order; simply stop the traversal after visiting k nodes.",
+  "recognitionCues": [
+    "BST specifically (not general binary tree)",
+    "asks for kth smallest/rank-based element, which maps directly to inorder position"
+  ],
+  "approach": "Perform inorder traversal (left, node, right), maintaining a counter. Each time a node is visited, decrement/increment the counter; when the counter reaches k, that node's value is the answer. Can be done recursively with early termination or iteratively with an explicit stack for better space efficiency on early stopping.",
+  "techniques": [
+    "inorder-traversal",
+    "bst-property"
+  ],
+  "timeComplexity": "O(h + k)",
+  "spaceComplexity": "O(h) for stack/recursion",
+  "difficulty": "Medium",
+  "tags": [
+    "tree",
+    "bst",
+    "inorder-traversal"
+  ]
+}

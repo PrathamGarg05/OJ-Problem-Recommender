@@ -1,0 +1,22 @@
+{
+  "title": "Add Two Numbers (Linked List)",
+  "pattern": "Linked List \u00e2\u20ac\u201d Digit-wise Simulation with Carry",
+  "coreIdea": "Add two numbers represented as linked lists (digits stored in reverse order) by simulating elementary addition digit by digit, tracking a carry that propagates to the next position.",
+  "recognitionCues": [
+    "numbers represented as linked lists of digits, typically reversed order",
+    "asks to return the sum as a new linked list"
+  ],
+  "approach": "Traverse both lists simultaneously, summing corresponding digits plus carry from the previous step. Create a new node with sum % 10, update carry = sum / 10. Continue until both lists and carry are exhausted, handling lists of different lengths.",
+  "techniques": [
+    "linked-list",
+    "carry-simulation"
+  ],
+  "timeComplexity": "O(max(m, n))",
+  "spaceComplexity": "O(max(m, n)) for output list",
+  "difficulty": "Medium",
+  "tags": [
+    "linked-list",
+    "math",
+    "simulation"
+  ]
+}

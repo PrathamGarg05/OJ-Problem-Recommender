@@ -1,0 +1,25 @@
+{
+  "title": "Word Search",
+  "pattern": "Backtracking \u00e2\u20ac\u201d DFS on Grid",
+  "coreIdea": "Determine if a word can be formed by sequentially adjacent letters in a grid, where the same cell can't be reused within one path. DFS explores each possible path, backtracking when a path fails to match.",
+  "recognitionCues": [
+    "2D grid of characters given",
+    "asks if a target word/path exists via adjacent cells",
+    "cells cannot be reused in a single path"
+  ],
+  "approach": "For each cell matching the word's first character, start DFS. At each step, mark the cell visited, check the next character against 4-directional neighbors, recurse. If a path fails, backtrack by unmarking the cell and try other directions/starting points.",
+  "techniques": [
+    "backtracking",
+    "dfs",
+    "grid-traversal"
+  ],
+  "timeComplexity": "O(rows * cols * 4^L) where L is word length",
+  "spaceComplexity": "O(L) recursion depth",
+  "difficulty": "Medium",
+  "tags": [
+    "backtracking",
+    "dfs",
+    "grid",
+    "strings"
+  ]
+}

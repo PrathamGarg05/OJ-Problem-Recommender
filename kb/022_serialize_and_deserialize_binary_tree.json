@@ -1,0 +1,24 @@
+{
+  "title": "Serialize and Deserialize Binary Tree",
+  "pattern": "Tree \u00e2\u20ac\u201d Preorder Traversal with Null Markers",
+  "coreIdea": "Convert a binary tree to a string representation and back, preserving exact structure including null children. Preorder traversal with explicit null markers allows unambiguous reconstruction.",
+  "recognitionCues": [
+    "asks to convert a tree to a string and back",
+    "reconstruction must exactly match original structure including nulls"
+  ],
+  "approach": "Serialize: preorder DFS, appending node value or a null marker (e.g., '#') to a list/string, joined by a delimiter. Deserialize: split the string, use an index/pointer that advances as you recursively rebuild - read a value, if null marker return None, else create node and recursively build left then right using the same pointer.",
+  "techniques": [
+    "preorder-traversal",
+    "recursion",
+    "string-encoding"
+  ],
+  "timeComplexity": "O(n) for both serialize and deserialize",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Hard",
+  "tags": [
+    "tree",
+    "binary-tree",
+    "design",
+    "dfs"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Russian Doll Envelopes",
+  "pattern": "Dynamic Programming \u00e2\u20ac\u201d 2D LIS via Sort + Binary Search",
+  "coreIdea": "Find the maximum number of envelopes that can be nested inside each other (both dimensions strictly increasing), by sorting envelopes by width ascending (and height descending for equal widths), then finding the longest increasing subsequence on heights alone.",
+  "recognitionCues": [
+    "asks for longest chain/nesting with two increasing dimensions",
+    "reduces to a 1D LIS problem after a clever sort"
+  ],
+  "approach": "Sort envelopes by width ascending; for equal widths, sort by height descending (this prevents same-width envelopes from being counted together in the LIS). Then run the O(n log n) LIS algorithm (binary search on a tails array) on the height values alone.",
+  "techniques": [
+    "sorting",
+    "lis",
+    "binary-search",
+    "2d-to-1d-reduction"
+  ],
+  "timeComplexity": "O(n log n)",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Hard",
+  "tags": [
+    "dp",
+    "lis",
+    "binary-search",
+    "advanced-dp"
+  ]
+}

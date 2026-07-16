@@ -1,0 +1,22 @@
+{
+  "title": "Set Matrix Zeroes",
+  "pattern": "Matrix \u00e2\u20ac\u201d In-place Marking using First Row/Column",
+  "coreIdea": "Set entire rows and columns to zero wherever a zero is found in the original matrix, achieved in O(1) extra space by using the matrix's own first row and first column as markers instead of a separate visited structure.",
+  "recognitionCues": [
+    "asks for in-place matrix modification with O(1) space constraint explicitly mentioned",
+    "zero propagation to entire row/column based on cell values"
+  ],
+  "approach": "Use first row and first column as marker arrays. First check if the actual first row/column originally contain a zero (track separately with booleans). Scan the rest of the matrix; if cell is 0, mark its row's first-column cell and column's first-row cell as 0. Then, second pass: for each cell, if its row-marker or column-marker is 0, set it to 0. Finally handle the first row/column based on the tracked booleans.",
+  "techniques": [
+    "in-place-marking",
+    "matrix-manipulation"
+  ],
+  "timeComplexity": "O(rows * cols)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "matrix",
+    "array",
+    "in-place"
+  ]
+}

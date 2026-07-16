@@ -1,0 +1,22 @@
+{
+  "title": "Find First and Last Position of Element in Sorted Array",
+  "pattern": "Binary Search \u00e2\u20ac\u201d Boundary Search (Lower/Upper Bound)",
+  "coreIdea": "Find the first and last occurrence of a target in a sorted array by running two separate binary searches, one biased to continue searching left after finding a match (for first occurrence), one biased right (for last occurrence).",
+  "recognitionCues": [
+    "array is sorted with possible duplicates",
+    "asks for range/first-and-last position of a value",
+    "O(log n) expected despite duplicates"
+  ],
+  "approach": "First occurrence: standard binary search, but on finding a match, record it and continue searching the left half (high = mid-1) instead of stopping. Last occurrence: same but continue searching right half (low = mid+1) on a match.",
+  "techniques": [
+    "binary-search",
+    "boundary-search"
+  ],
+  "timeComplexity": "O(log n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "binary-search",
+    "array"
+  ]
+}

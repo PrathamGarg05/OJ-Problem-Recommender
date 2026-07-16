@@ -1,0 +1,23 @@
+{
+  "title": "Copy List with Random Pointer",
+  "pattern": "Linked List \u00e2\u20ac\u201d Hashmap Node Mapping (or Interweaving Trick)",
+  "coreIdea": "Deep copy a linked list where each node has an extra random pointer to any node in the list (or null), by mapping original nodes to their copies using a hashmap, then wiring next and random pointers for the copies using that mapping.",
+  "recognitionCues": [
+    "linked list with an extra pointer beyond next, pointing anywhere in the list",
+    "asks for a deep copy preserving both next and random pointer relationships"
+  ],
+  "approach": "First pass: create a copy of each node (value only), storing original-to-copy mapping in a hashmap. Second pass: for each original node, set its copy's next to the mapped copy of original.next, and copy's random to the mapped copy of original.random (using the hashmap for O(1) lookup).",
+  "techniques": [
+    "hashmap",
+    "linked-list",
+    "two-pass"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n) for hashmap",
+  "difficulty": "Medium",
+  "tags": [
+    "linked-list",
+    "hashmap",
+    "design"
+  ]
+}

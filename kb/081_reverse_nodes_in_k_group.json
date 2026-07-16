@@ -1,0 +1,21 @@
+{
+  "title": "Reverse Nodes in k-Group",
+  "pattern": "Linked List \u00e2\u20ac\u201d Recursive/Iterative Group Reversal",
+  "coreIdea": "Reverse every k consecutive nodes in a linked list. Check if k nodes exist ahead first, then reverse that group using standard pointer reversal, and recursively/iteratively connect to the reversed next group.",
+  "recognitionCues": [
+    "asks to reverse in fixed-size groups, not the whole list",
+    "leftover nodes fewer than k typically left unreversed"
+  ],
+  "approach": "Check if k nodes remain from current position; if not, return head as-is. Otherwise, reverse the next k nodes using standard iterative reversal, then recursively call the function on the remaining list and attach it to the tail of the just-reversed group (which was the original head).",
+  "techniques": [
+    "linked-list-reversal",
+    "recursion"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n/k) recursion stack, O(1) if done iteratively",
+  "difficulty": "Hard",
+  "tags": [
+    "linked-list",
+    "recursion"
+  ]
+}

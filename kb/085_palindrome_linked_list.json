@@ -1,0 +1,22 @@
+{
+  "title": "Palindrome Linked List",
+  "pattern": "Linked List \u00e2\u20ac\u201d Fast/Slow Pointer + Reversal",
+  "coreIdea": "Check if a linked list reads the same forwards and backwards in O(1) space by finding the middle using fast/slow pointers, reversing the second half in place, and comparing it against the first half.",
+  "recognitionCues": [
+    "asks to check palindrome property on a linked list, not an array/string",
+    "O(1) space constraint typically specified, ruling out copying to an array"
+  ],
+  "approach": "Find the middle of the list using fast/slow pointers. Reverse the second half of the list from the middle onward. Compare the first half and reversed second half node by node for equality. Optionally restore the list by re-reversing the second half.",
+  "techniques": [
+    "fast-slow-pointers",
+    "linked-list-reversal"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Easy",
+  "tags": [
+    "linked-list",
+    "two-pointers",
+    "palindrome"
+  ]
+}

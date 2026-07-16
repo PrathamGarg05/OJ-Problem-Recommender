@@ -1,0 +1,23 @@
+{
+  "title": "Design Add and Search Words Data Structure",
+  "pattern": "Trie + DFS \u00e2\u20ac\u201d Wildcard-aware Search",
+  "coreIdea": "Extend a standard trie to support search queries containing '.' as a wildcard matching any single character, by branching into all children during DFS whenever a wildcard is encountered instead of following a single path.",
+  "recognitionCues": [
+    "trie-based design problem with wildcard character support in search",
+    "search complexity can no longer be purely O(word length) due to branching"
+  ],
+  "approach": "Use a standard trie for insertion. For search, run DFS: at each character, if it's a normal letter, follow that single child if it exists; if it's a wildcard '.', recursively try all existing children at that node. Return true if any path reaches a node marked end-of-word at the final character.",
+  "techniques": [
+    "trie",
+    "dfs",
+    "wildcard-matching"
+  ],
+  "timeComplexity": "O(L) for insert, O(26^L) worst case for search with many wildcards",
+  "spaceComplexity": "O(total characters inserted)",
+  "difficulty": "Medium",
+  "tags": [
+    "design",
+    "trie",
+    "dfs"
+  ]
+}

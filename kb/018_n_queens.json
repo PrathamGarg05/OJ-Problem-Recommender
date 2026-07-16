@@ -1,0 +1,23 @@
+{
+  "title": "N-Queens",
+  "pattern": "Backtracking \u00e2\u20ac\u201d Constraint Satisfaction",
+  "coreIdea": "Place N queens on an N\u00c3\u2014N chessboard such that no two queens attack each other. Place queens row by row, backtracking whenever a placement violates column, diagonal, or anti-diagonal constraints.",
+  "recognitionCues": [
+    "grid-based placement problem with mutual exclusion constraints",
+    "asks for all valid configurations or count of them",
+    "classic constraint satisfaction phrasing"
+  ],
+  "approach": "Recurse row by row. For each row, try placing a queen in each column, checking if it's safe (no conflict with previously placed queens in column, upper-left diagonal, upper-right diagonal using sets or arrays for O(1) checks). If safe, place and recurse to next row; on return, backtrack by removing the queen.",
+  "techniques": [
+    "backtracking",
+    "constraint-checking"
+  ],
+  "timeComplexity": "O(N!) approximately, bounded by pruning",
+  "spaceComplexity": "O(N^2) for board, O(N) for tracking columns/diagonals",
+  "difficulty": "Hard",
+  "tags": [
+    "backtracking",
+    "constraint-satisfaction",
+    "matrix"
+  ]
+}

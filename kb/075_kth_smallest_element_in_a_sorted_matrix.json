@@ -1,0 +1,23 @@
+{
+  "title": "Kth Smallest Element in a Sorted Matrix",
+  "pattern": "Binary Search on Answer (over Value Range)",
+  "coreIdea": "Find the kth smallest element in a row-and-column sorted matrix by binary searching over the value range (not indices), using a counting function that leverages the matrix's sorted structure to count elements <= a candidate value in O(rows+cols).",
+  "recognitionCues": [
+    "matrix sorted along both rows and columns",
+    "asks for kth smallest without fully flattening and sorting",
+    "binary search on answer applicable since 'count of elements <= x' is monotonic"
+  ],
+  "approach": "Binary search between matrix[0][0] and matrix[n-1][n-1]. For each candidate mid value, count how many matrix elements are <= mid by walking from the bottom-left corner (or top-right), moving right when the value is <= mid (counting that column's contribution) and up otherwise. If count >= k, search lower half; else search upper half.",
+  "techniques": [
+    "binary-search-on-answer",
+    "matrix-traversal"
+  ],
+  "timeComplexity": "O((rows+cols) * log(max-min))",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Hard",
+  "tags": [
+    "binary-search",
+    "matrix",
+    "search-on-answer"
+  ]
+}

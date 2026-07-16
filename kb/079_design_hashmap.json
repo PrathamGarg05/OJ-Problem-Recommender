@@ -1,0 +1,23 @@
+{
+  "title": "Design HashMap",
+  "pattern": "Design \u00e2\u20ac\u201d Array of Buckets with Chaining",
+  "coreIdea": "Implement a hashmap from scratch using an array of fixed size as buckets, where each bucket holds a list of (key, value) pairs, resolving collisions by chaining (multiple entries in the same bucket).",
+  "recognitionCues": [
+    "asks to implement a hashmap/dictionary without using the language's built-in map",
+    "tests understanding of hashing and collision resolution"
+  ],
+  "approach": "Use an array of a fixed size (e.g., 1000) of lists (buckets). Compute bucket index via key % array size (a simple hash function). Put: check if key exists in that bucket's list and update, else append new pair. Get: linear scan the bucket's list for the key. Remove: linear scan and remove matching pair.",
+  "techniques": [
+    "hashing",
+    "chaining",
+    "design"
+  ],
+  "timeComplexity": "O(1) average per operation, O(n) worst case with many collisions",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Easy",
+  "tags": [
+    "design",
+    "hashmap",
+    "hashing"
+  ]
+}

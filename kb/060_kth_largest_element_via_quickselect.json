@@ -1,0 +1,23 @@
+{
+  "title": "Kth Largest Element via Quickselect",
+  "pattern": "Divide and Conquer \u00e2\u20ac\u201d Quickselect (Partition-based Selection)",
+  "coreIdea": "Find the kth largest element in expected O(n) time by using the partition step from quicksort, recursing only into the side of the partition that must contain the answer, rather than sorting the whole array.",
+  "recognitionCues": [
+    "asks for kth largest/smallest without needing the full array sorted",
+    "expected linear time solution hinted, as an alternative to heap-based O(n log k)"
+  ],
+  "approach": "Pick a pivot, partition the array so elements greater than pivot are on one side. If pivot's final position matches the target rank (n-k for kth largest), return it. Otherwise recurse only into the half that contains the target rank.",
+  "techniques": [
+    "quickselect",
+    "partitioning",
+    "divide-and-conquer"
+  ],
+  "timeComplexity": "O(n) average, O(n^2) worst case",
+  "spaceComplexity": "O(1) to O(log n) depending on implementation",
+  "difficulty": "Medium",
+  "tags": [
+    "divide-and-conquer",
+    "quickselect",
+    "array"
+  ]
+}

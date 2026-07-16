@@ -1,0 +1,26 @@
+{
+  "title": "Detect Cycle in an Undirected Graph",
+  "pattern": "Graph Traversal \u00e2\u20ac\u201d Cycle Detection (Undirected)",
+  "coreIdea": "Determine if an undirected graph contains a cycle by traversing with BFS or DFS while tracking the parent node, since revisiting a non-parent already-visited node indicates a cycle.",
+  "recognitionCues": [
+    "undirected graph given",
+    "asks whether a cycle exists",
+    "graph may be disconnected, requiring checks from multiple starting points"
+  ],
+  "approach": "For each unvisited node, run BFS/DFS. Track the parent of each visited node. If a neighbor is visited and is not the current node's parent, a cycle is detected. Repeat for all disconnected components.",
+  "techniques": [
+    "bfs",
+    "dfs",
+    "cycle-detection",
+    "parent-tracking"
+  ],
+  "timeComplexity": "O(V + E)",
+  "spaceComplexity": "O(V + E)",
+  "difficulty": "Medium",
+  "tags": [
+    "graph",
+    "cycle-detection",
+    "bfs",
+    "dfs"
+  ]
+}

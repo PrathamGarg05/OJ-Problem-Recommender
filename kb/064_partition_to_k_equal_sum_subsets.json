@@ -1,0 +1,24 @@
+{
+  "title": "Partition to K Equal Sum Subsets",
+  "pattern": "Backtracking with Bitmask Pruning",
+  "coreIdea": "Determine if an array can be partitioned into k subsets each with equal sum, by backtracking through subset assignments while using a bitmask to track which elements are already used, pruning branches that can't reach the target sum.",
+  "recognitionCues": [
+    "asks to partition into a fixed number of equal-sum groups",
+    "small array size hinted (allows exponential/bitmask approaches)"
+  ],
+  "approach": "Compute target sum = total/k (return false if not divisible). Use backtracking with a bitmask of used elements: try adding each unused element to the current subset if it doesn't exceed target; when a subset reaches target exactly, start a new subset (decrement k) and continue. Memoize on bitmask state to avoid recomputation.",
+  "techniques": [
+    "backtracking",
+    "bitmask",
+    "memoization"
+  ],
+  "timeComplexity": "O(k * 2^n) bounded by memoization on bitmask states",
+  "spaceComplexity": "O(2^n) for memoization",
+  "difficulty": "Hard",
+  "tags": [
+    "backtracking",
+    "bitmask",
+    "dp",
+    "advanced-dp"
+  ]
+}

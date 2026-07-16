@@ -1,0 +1,22 @@
+{
+  "title": "Subarray Sum Equals K",
+  "pattern": "Prefix Sum with Hashmap",
+  "coreIdea": "Count the number of contiguous subarrays summing to k by tracking running prefix sums and using a hashmap of prefix-sum frequencies, since a subarray sums to k exactly when two prefix sums differ by k.",
+  "recognitionCues": [
+    "asks for count of subarrays with a given sum",
+    "array may contain negative numbers, ruling out a simple sliding window"
+  ],
+  "approach": "Maintain a running prefix_sum and a hashmap of {prefix_sum: frequency}, initialized with {0: 1}. For each element, add it to prefix_sum, then check if (prefix_sum - k) exists in the hashmap; if so, add its frequency to the answer count. Then increment the current prefix_sum's frequency in the hashmap.",
+  "techniques": [
+    "prefix-sum",
+    "hashmap"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Medium",
+  "tags": [
+    "array",
+    "prefix-sum",
+    "hashmap"
+  ]
+}

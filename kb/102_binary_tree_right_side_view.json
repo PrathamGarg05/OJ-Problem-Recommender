@@ -1,0 +1,22 @@
+{
+  "title": "Binary Tree Right Side View",
+  "pattern": "Tree \u00e2\u20ac\u201d BFS Level Order (Last Node per Level)",
+  "coreIdea": "Return the values visible when viewing a binary tree from the right side, which corresponds to the last (rightmost) node at each level, obtained via level-order BFS traversal.",
+  "recognitionCues": [
+    "asks for the view of a tree from one side (right or left)",
+    "equivalent to picking one node per level in a level-order traversal"
+  ],
+  "approach": "Run BFS level by level (using queue size to process one level at a time). At each level, record the value of the last node processed in that level's batch \u00e2\u20ac\u201d that's the rightmost node visible from that level.",
+  "techniques": [
+    "bfs",
+    "level-order-traversal"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n) for queue and output",
+  "difficulty": "Medium",
+  "tags": [
+    "tree",
+    "bfs",
+    "binary-tree"
+  ]
+}

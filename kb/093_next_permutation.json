@@ -1,0 +1,21 @@
+{
+  "title": "Next Permutation",
+  "pattern": "Array \u00e2\u20ac\u201d Lexicographic Next Arrangement",
+  "coreIdea": "Rearrange an array into the next lexicographically greater permutation in-place, by finding the rightmost position where the sequence can be increased, swapping with the smallest larger element to its right, then reversing the suffix to get the smallest possible arrangement.",
+  "recognitionCues": [
+    "asks for the 'next' permutation in lexicographic order",
+    "must be done in-place with O(1) extra space"
+  ],
+  "approach": "Scan from the right to find the first index i where arr[i] < arr[i+1] (the 'pivot'). If none found, the array is the last permutation \u00e2\u20ac\u201d reverse it entirely. Otherwise, scan from the right again to find the smallest element greater than arr[i], swap them, then reverse the subarray after index i.",
+  "techniques": [
+    "in-place",
+    "array-manipulation"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "array",
+    "in-place"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Longest Palindromic Substring",
+  "pattern": "String \u00e2\u20ac\u201d Expand Around Center",
+  "coreIdea": "Find the longest palindromic substring by treating each character (and each gap between characters, for even-length palindromes) as a potential center, expanding outward while characters match on both sides.",
+  "recognitionCues": [
+    "asks for longest palindromic substring (contiguous), not subsequence",
+    "brute force is O(n^3), problem hints at O(n^2) improvement"
+  ],
+  "approach": "For each index, run two expansions: one treating the index as a single center (odd length), one treating index and index+1 as a center pair (even length). Expand outward while left and right characters match, tracking the longest palindrome found across all centers.",
+  "techniques": [
+    "expand-around-center",
+    "two-pointer"
+  ],
+  "timeComplexity": "O(n^2)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "strings",
+    "palindrome",
+    "two-pointer"
+  ]
+}

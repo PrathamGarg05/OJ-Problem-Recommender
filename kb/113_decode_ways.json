@@ -1,0 +1,22 @@
+{
+  "title": "Decode Ways",
+  "pattern": "Dynamic Programming \u00e2\u20ac\u201d Fibonacci-style with Validity Checks",
+  "coreIdea": "Count the number of ways to decode a digit string into letters (where 'A'=1 ... 'Z'=26), using a DP recurrence similar to climbing stairs, but with extra validity checks for single-digit and two-digit decodings (e.g., '0' alone is invalid, two-digit must be between 10-26).",
+  "recognitionCues": [
+    "digit string mapping to letters (1-26)",
+    "asks to count total valid decodings",
+    "requires careful handling of '0' which cannot stand alone"
+  ],
+  "approach": "dp[i] represents ways to decode the first i characters. dp[0]=1. For each position i, if the single digit at i-1 is nonzero (1-9), add dp[i-1]. If the two-digit number formed by positions i-2,i-1 is between 10-26, add dp[i-2]. Sum both contributions for dp[i].",
+  "techniques": [
+    "1d-dp",
+    "validity-checking"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n), optimizable to O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "dp",
+    "strings"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "LRU Cache",
+  "pattern": "Design \u00e2\u20ac\u201d Hashmap + Doubly Linked List",
+  "coreIdea": "Design a cache with O(1) get and put that evicts the least recently used item when capacity is exceeded, achieved by combining a hashmap (for O(1) lookup) with a doubly linked list (for O(1) reordering to track recency).",
+  "recognitionCues": [
+    "asks to design a cache with capacity and eviction policy",
+    "requires O(1) for both get and put operations"
+  ],
+  "approach": "Maintain a hashmap from key to node, and a doubly linked list ordered by recency (most recent at head/tail). On get, move the accessed node to the most-recent end. On put, if key exists update and move to most-recent end; if at capacity, remove the least-recently-used node (opposite end) before inserting the new one.",
+  "techniques": [
+    "hashmap",
+    "doubly-linked-list",
+    "design"
+  ],
+  "timeComplexity": "O(1) for get and put",
+  "spaceComplexity": "O(capacity)",
+  "difficulty": "Medium",
+  "tags": [
+    "design",
+    "linked-list",
+    "hashmap",
+    "cache"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Valid Tic-Tac-Toe State",
+  "pattern": "Simulation \u00e2\u20ac\u201d State Validity via Move-Count Invariants",
+  "coreIdea": "Determine if a given tic-tac-toe board is a valid game state by checking logical invariants: move counts (X can have at most one more move than O), and that a player who has already won couldn't have taken further turns after winning.",
+  "recognitionCues": [
+    "given a final/intermediate state, asks if it could have arisen from valid alternating play",
+    "not a search/traversal problem, but a validity-checking problem using counting and win-condition logic"
+  ],
+  "approach": "Count X's and O's on the board; valid only if count is equal or X has exactly one more (since X moves first). Check win conditions for both players. If O has won, counts must be equal (O just completed the winning move). If X has won, X count must be exactly one more than O. Both players cannot have simultaneously won.",
+  "techniques": [
+    "simulation",
+    "invariant-checking",
+    "counting"
+  ],
+  "timeComplexity": "O(1) since board size is fixed (3x3)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "simulation",
+    "design",
+    "matrix"
+  ]
+}

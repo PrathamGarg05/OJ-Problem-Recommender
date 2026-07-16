@@ -1,0 +1,23 @@
+{
+  "title": "Combination Sum",
+  "pattern": "Backtracking \u00e2\u20ac\u201d Unbounded Choice Exploration",
+  "coreIdea": "Find all unique combinations of numbers (each reusable unlimited times) that sum to a target, by recursively trying each candidate, allowing repeated use of the same element by not advancing the start index on inclusion.",
+  "recognitionCues": [
+    "asks for all combinations summing to a target",
+    "elements can be reused unlimited times",
+    "output is all valid combinations, not just a count"
+  ],
+  "approach": "Recurse with a start index, current combination, and remaining target. At each step, try including candidates from start index onward (allowing same index to be reused since elements can repeat), reducing target and recursing. If target hits 0, record the combination. Backtrack by removing the last added element before trying the next candidate.",
+  "techniques": [
+    "backtracking",
+    "recursion"
+  ],
+  "timeComplexity": "O(2^target) worst case, bounded by pruning",
+  "spaceComplexity": "O(target) recursion depth",
+  "difficulty": "Medium",
+  "tags": [
+    "backtracking",
+    "recursion",
+    "array"
+  ]
+}

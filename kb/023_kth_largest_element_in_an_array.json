@@ -1,0 +1,22 @@
+{
+  "title": "Kth Largest Element in an Array",
+  "pattern": "Heap \u00e2\u20ac\u201d Min-Heap of Size K",
+  "coreIdea": "Find the kth largest element without fully sorting the array, by maintaining a min-heap of size k containing the k largest elements seen so far; the heap's top is always the answer.",
+  "recognitionCues": [
+    "asks for kth largest/smallest element",
+    "full sort would be O(n log n), problem hints at more efficient approach for large n with small k"
+  ],
+  "approach": "Push elements onto a min-heap one at a time. If heap size exceeds k, pop the smallest. After processing all elements, the heap's top (smallest in heap) is the kth largest overall.",
+  "techniques": [
+    "min-heap",
+    "priority-queue"
+  ],
+  "timeComplexity": "O(n log k)",
+  "spaceComplexity": "O(k)",
+  "difficulty": "Medium",
+  "tags": [
+    "heap",
+    "priority-queue",
+    "array"
+  ]
+}

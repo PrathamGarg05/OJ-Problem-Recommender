@@ -1,0 +1,21 @@
+{
+  "title": "Generate Parentheses",
+  "pattern": "Backtracking \u00e2\u20ac\u201d Constrained Choice (Open/Close Count Tracking)",
+  "coreIdea": "Generate all valid combinations of n pairs of well-formed parentheses by backtracking, adding an open parenthesis whenever the open count is below n, and adding a close parenthesis only when it wouldn't exceed the currently open count.",
+  "recognitionCues": [
+    "asks for all valid combinations of balanced parentheses for a given n",
+    "classic backtracking problem with two simple pruning constraints"
+  ],
+  "approach": "Recurse with counts of open and close parentheses used so far, and the current string built. Add '(' if open count < n, recurse. Add ')' if close count < open count, recurse. When the string length reaches 2n, add it to results.",
+  "techniques": [
+    "backtracking",
+    "constrained-recursion"
+  ],
+  "timeComplexity": "O(4^n / sqrt(n)) \u00e2\u20ac\u201d Catalan number bound",
+  "spaceComplexity": "O(n) recursion depth",
+  "difficulty": "Medium",
+  "tags": [
+    "backtracking",
+    "strings"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Rotate Image (Matrix 90 Degrees)",
+  "pattern": "Matrix \u00e2\u20ac\u201d Transpose + Reverse Rows",
+  "coreIdea": "Rotate a square matrix 90 degrees clockwise in-place by first transposing the matrix (swap rows and columns), then reversing each row.",
+  "recognitionCues": [
+    "asks to rotate a 2D matrix in-place, typically 90 degrees",
+    "O(1) extra space explicitly required"
+  ],
+  "approach": "Transpose the matrix in-place: for i < j, swap matrix[i][j] with matrix[j][i]. Then reverse each row of the transposed matrix to achieve the clockwise rotation.",
+  "techniques": [
+    "matrix-transpose",
+    "in-place"
+  ],
+  "timeComplexity": "O(n^2)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "matrix",
+    "in-place"
+  ]
+}

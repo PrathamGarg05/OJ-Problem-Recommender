@@ -1,0 +1,23 @@
+{
+  "title": "Subsets",
+  "pattern": "Backtracking \u00e2\u20ac\u201d Include/Exclude",
+  "coreIdea": "Generate all possible subsets of a given array by exploring, at each element, the choice to either include it or exclude it, recursively building up all combinations.",
+  "recognitionCues": [
+    "asks to generate all subsets/combinations",
+    "no ordering constraint on elements within a subset",
+    "power set of size 2^n expected in output"
+  ],
+  "approach": "Use recursion with an index parameter and a current subset list. At each call, add the current subset to results, then for each remaining element, include it, recurse, then backtrack (remove it) before trying the next element.",
+  "techniques": [
+    "backtracking",
+    "recursion"
+  ],
+  "timeComplexity": "O(2^n * n)",
+  "spaceComplexity": "O(n) recursion depth, O(2^n * n) for output",
+  "difficulty": "Medium",
+  "tags": [
+    "backtracking",
+    "recursion",
+    "subsets"
+  ]
+}

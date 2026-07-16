@@ -1,0 +1,22 @@
+{
+  "title": "Path Sum",
+  "pattern": "Tree \u00e2\u20ac\u201d Root-to-Leaf Recursive Sum Check",
+  "coreIdea": "Determine if a root-to-leaf path exists summing exactly to a target, by recursively subtracting the current node's value from the target and checking leaves for a remaining value of exactly zero.",
+  "recognitionCues": [
+    "asks if a root-to-leaf path summing to a target exists",
+    "simplest tree + DP-like recursion problem, common warm-up"
+  ],
+  "approach": "Base case: if node is null, return false. If node is a leaf, return true only if node.val equals remaining target. Otherwise, recursively check left OR right subtree with target reduced by node.val.",
+  "techniques": [
+    "recursion",
+    "tree-traversal"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(h) recursion stack",
+  "difficulty": "Easy",
+  "tags": [
+    "tree",
+    "binary-tree",
+    "recursion"
+  ]
+}

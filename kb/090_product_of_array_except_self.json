@@ -1,0 +1,22 @@
+{
+  "title": "Product of Array Except Self",
+  "pattern": "Array \u00e2\u20ac\u201d Prefix and Suffix Product Passes",
+  "coreIdea": "Compute an output array where each element is the product of all other elements, without using division, by combining a left-to-right prefix product pass with a right-to-left suffix product pass.",
+  "recognitionCues": [
+    "asks for product of all elements except self",
+    "explicitly disallows using division",
+    "O(n) time expected"
+  ],
+  "approach": "First pass left to right: result[i] = product of all elements before i (prefix product). Second pass right to left: multiply result[i] by the running suffix product of all elements after i, updating the suffix product as you go.",
+  "techniques": [
+    "prefix-product",
+    "suffix-product"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1) excluding output array",
+  "difficulty": "Medium",
+  "tags": [
+    "array",
+    "prefix-sum-pattern"
+  ]
+}

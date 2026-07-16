@@ -1,0 +1,21 @@
+{
+  "title": "Letter Combinations of a Phone Number",
+  "pattern": "Backtracking \u00e2\u20ac\u201d Cartesian Product via Recursion",
+  "coreIdea": "Generate all possible letter combinations that a given digit string (2-9) could represent on a phone keypad, by recursively choosing one letter for the current digit and moving to the next digit, backtracking to try other letter choices.",
+  "recognitionCues": [
+    "digits mapped to multiple possible letters (like phone keypad)",
+    "asks for all combinations, essentially a Cartesian product across positions"
+  ],
+  "approach": "Maintain a digit-to-letters mapping. Recurse with an index into the digit string and a current combination string. Base case: if index equals digit string length, add the current combination to results. Otherwise, for each letter mapped to the current digit, append it, recurse to the next index, then backtrack (remove the letter) before trying the next option.",
+  "techniques": [
+    "backtracking",
+    "recursion"
+  ],
+  "timeComplexity": "O(4^n) worst case (digits mapping to 4 letters)",
+  "spaceComplexity": "O(n) recursion depth",
+  "difficulty": "Medium",
+  "tags": [
+    "backtracking",
+    "strings"
+  ]
+}

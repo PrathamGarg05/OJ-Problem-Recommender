@@ -1,0 +1,23 @@
+{
+  "title": "Design a Stack With Increment Operation",
+  "pattern": "Design \u00e2\u20ac\u201d Array-based Stack with Lazy Range Update",
+  "coreIdea": "Support a stack with push, pop, and an increment operation that adds a value to the bottom k elements, done efficiently by deferring the increment using a separate 'lazy' array applied only when elements are actually popped.",
+  "recognitionCues": [
+    "stack design problem with an unusual bulk-update operation (increment bottom k elements)",
+    "naive approach would be O(k) per increment call; problem often hints at O(1) via laziness"
+  ],
+  "approach": "Maintain the stack as an array along with a parallel 'increment' array of the same max size, storing pending increments. On increment(k, val), add val to increment[min(k, size)-1] (marking a deferred addition applying to the bottom min(k,size) elements). On pop, return the current top value plus its accumulated increment, then propagate that increment down to the new top by adding it to increment[size-2] before removing the top.",
+  "techniques": [
+    "lazy-propagation",
+    "array",
+    "design"
+  ],
+  "timeComplexity": "O(1) for push, pop, and increment",
+  "spaceComplexity": "O(maxSize)",
+  "difficulty": "Medium",
+  "tags": [
+    "design",
+    "stack",
+    "lazy-propagation"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Container With Most Water",
+  "pattern": "Two Pointers \u00e2\u20ac\u201d Greedy Width Reduction",
+  "coreIdea": "Maximize the area formed between two vertical lines and the x-axis by starting pointers at both ends and moving the pointer at the shorter line inward, since moving the taller line's pointer can never increase the area.",
+  "recognitionCues": [
+    "array represents heights/walls",
+    "asks for maximum area/water contained between two lines",
+    "brute force O(n^2), hints at O(n) two-pointer solution"
+  ],
+  "approach": "Place left pointer at start, right pointer at end. Compute area as min(height[left], height[right]) * (right - left), track max. Move the pointer at the shorter height inward, since that's the only way area could increase. Repeat until pointers meet.",
+  "techniques": [
+    "two-pointers",
+    "greedy"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "two-pointers",
+    "array",
+    "greedy"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Counting Bits",
+  "pattern": "Dynamic Programming \u00e2\u20ac\u201d Bit Manipulation Recurrence",
+  "coreIdea": "Compute the number of set bits for every number from 0 to n efficiently by reusing previously computed results, since the bit count of a number relates to the bit count of a smaller number obtained by removing its lowest set bit or right-shifting.",
+  "recognitionCues": [
+    "asks for bit counts of EVERY number in a range, not just one number",
+    "hints at O(n) total instead of O(n log n) via bit-counting each number independently"
+  ],
+  "approach": "Build a dp array of size n+1. dp[0] = 0. For each i from 1 to n, dp[i] = dp[i >> 1] + (i & 1) \u00e2\u20ac\u201d the bit count of i equals the bit count of i with its last bit removed (i>>1), plus 1 if the last bit is set.",
+  "techniques": [
+    "dp",
+    "bit-manipulation"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Easy",
+  "tags": [
+    "bit-manipulation",
+    "dp"
+  ]
+}

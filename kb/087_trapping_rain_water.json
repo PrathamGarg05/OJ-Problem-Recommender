@@ -1,0 +1,22 @@
+{
+  "title": "Trapping Rain Water",
+  "pattern": "Two Pointers \u00e2\u20ac\u201d Bounded by Max Height on Each Side",
+  "coreIdea": "Calculate total trapped water across an elevation map by tracking the maximum height seen from the left and right at each position; water trapped at any bar equals min(leftMax, rightMax) minus the bar's own height.",
+  "recognitionCues": [
+    "array represents elevation/heights",
+    "asks for total water trapped between bars",
+    "classic two-pointer or prefix-max problem"
+  ],
+  "approach": "Use two pointers from both ends, tracking leftMax and rightMax. Move the pointer on the side with the smaller max inward, since that side's water level is bounded by its own max; add (that max - current height) to the total at each step.",
+  "techniques": [
+    "two-pointers",
+    "prefix-max"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Hard",
+  "tags": [
+    "array",
+    "two-pointers"
+  ]
+}

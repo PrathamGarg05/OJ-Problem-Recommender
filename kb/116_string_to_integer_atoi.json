@@ -1,0 +1,21 @@
+{
+  "title": "String to Integer (atoi)",
+  "pattern": "String \u00e2\u20ac\u201d Careful Character-by-Character Parsing",
+  "coreIdea": "Convert a string to a 32-bit signed integer following specific rules (skip leading whitespace, optional sign, digits until a non-digit, clamp to INT_MIN/INT_MAX on overflow), testing careful edge-case handling rather than any algorithmic complexity.",
+  "recognitionCues": [
+    "asks to implement a standard library function (atoi) from scratch",
+    "tests edge case handling more than algorithmic thinking \u00e2\u20ac\u201d overflow, invalid input, whitespace, sign"
+  ],
+  "approach": "Skip leading whitespace. Check for optional '+' or '-' sign. Parse consecutive digits, building the number, checking after each digit if the accumulated value would overflow 32-bit int range (clamp and return early if so). Stop at the first non-digit character. Return 0 if no valid number was found.",
+  "techniques": [
+    "string-parsing",
+    "edge-case-handling"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "strings",
+    "simulation"
+  ]
+}

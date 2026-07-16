@@ -1,0 +1,23 @@
+{
+  "title": "Design Circular Queue",
+  "pattern": "Design \u00e2\u20ac\u201d Fixed-size Array with Modular Pointers",
+  "coreIdea": "Implement a fixed-capacity FIFO queue using an array where front and rear pointers wrap around using modular arithmetic, reusing freed space instead of shifting elements.",
+  "recognitionCues": [
+    "asks to design a queue with a fixed maximum capacity",
+    "efficient space reuse (circular wraparound) is the expected mechanism"
+  ],
+  "approach": "Maintain an array of fixed size, a front index, a count of current elements (or a rear index with a full/empty flag to disambiguate). Enqueue: place at (front + count) % capacity, increment count. Dequeue: increment front (mod capacity), decrement count. Track count to distinguish full vs empty when front == rear.",
+  "techniques": [
+    "array",
+    "modular-arithmetic",
+    "design"
+  ],
+  "timeComplexity": "O(1) for all operations",
+  "spaceComplexity": "O(capacity)",
+  "difficulty": "Medium",
+  "tags": [
+    "design",
+    "queue",
+    "array"
+  ]
+}

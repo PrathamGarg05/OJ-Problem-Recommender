@@ -1,0 +1,25 @@
+{
+  "title": "Critical Connections in a Network (Bridges)",
+  "pattern": "Graph \u00e2\u20ac\u201d Tarjan's Bridge-Finding Algorithm",
+  "coreIdea": "Find all edges whose removal would disconnect the graph (bridges), by running DFS while tracking discovery time and the lowest reachable ancestor time for each node; an edge is a bridge if the child's lowest reachable time is strictly greater than the parent's discovery time.",
+  "recognitionCues": [
+    "asks for critical edges/connections whose removal disconnects the graph",
+    "undirected connected graph, single-pass DFS solution expected"
+  ],
+  "approach": "DFS from any node, tracking discovery time and low-link value for each node. For each neighbor: if unvisited, recurse then update current node's low-link with child's low-link, and if child's low-link > current node's discovery time, the edge is a bridge. If neighbor is visited and not the direct parent, update low-link with neighbor's discovery time.",
+  "techniques": [
+    "dfs",
+    "tarjans-algorithm",
+    "bridge-finding",
+    "low-link-values"
+  ],
+  "timeComplexity": "O(V + E)",
+  "spaceComplexity": "O(V + E)",
+  "difficulty": "Hard",
+  "tags": [
+    "graph",
+    "dfs",
+    "tarjans-algorithm",
+    "advanced-graph"
+  ]
+}

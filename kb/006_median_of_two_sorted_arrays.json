@@ -1,0 +1,23 @@
+{
+  "title": "Median of Two Sorted Arrays",
+  "pattern": "Binary Search \u00e2\u20ac\u201d Partition-based",
+  "coreIdea": "Find the median of two sorted arrays in O(log(min(m,n))) by binary searching on the smaller array to find a correct partition point where all elements on the left of both partitions are smaller than all elements on the right.",
+  "recognitionCues": [
+    "two sorted arrays given",
+    "asks for median with a strict log-time complexity requirement",
+    "combined array length can be odd or even"
+  ],
+  "approach": "Binary search on the smaller array's partition index. For each candidate partition, compute the corresponding partition in the other array. Check if left-max of both partitions <= right-min of both partitions. Adjust binary search bounds until this condition holds, then compute median from the four boundary values.",
+  "techniques": [
+    "binary-search",
+    "partition-logic"
+  ],
+  "timeComplexity": "O(log(min(m,n)))",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Hard",
+  "tags": [
+    "binary-search",
+    "array",
+    "partition"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Clone Graph",
+  "pattern": "Graph \u00e2\u20ac\u201d DFS/BFS with Hashmap Node Mapping",
+  "coreIdea": "Create a deep copy of a connected undirected graph by traversing it (DFS or BFS) while maintaining a hashmap from original nodes to their corresponding cloned nodes, ensuring each node is cloned exactly once even with cycles.",
+  "recognitionCues": [
+    "asks to deep-copy a graph structure (not a tree, may have cycles)",
+    "requires careful handling of already-visited nodes to avoid infinite loops"
+  ],
+  "approach": "Use a hashmap from original node to cloned node. DFS/BFS from the given start node: if a node isn't in the hashmap, create its clone and add to hashmap before recursing into its neighbors (to handle cycles correctly). For each neighbor, recursively clone it (or fetch existing clone) and add to the current clone's neighbor list.",
+  "techniques": [
+    "dfs",
+    "bfs",
+    "hashmap"
+  ],
+  "timeComplexity": "O(V + E)",
+  "spaceComplexity": "O(V) for hashmap",
+  "difficulty": "Medium",
+  "tags": [
+    "graph",
+    "dfs",
+    "bfs",
+    "hashmap"
+  ]
+}

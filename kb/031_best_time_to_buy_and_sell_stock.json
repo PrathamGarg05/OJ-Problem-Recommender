@@ -1,0 +1,22 @@
+{
+  "title": "Best Time to Buy and Sell Stock",
+  "pattern": "Array \u00e2\u20ac\u201d Single Pass Min Tracking",
+  "coreIdea": "Maximize profit from a single buy-sell transaction by tracking the minimum price seen so far while scanning left to right, and computing potential profit at each step against that minimum.",
+  "recognitionCues": [
+    "single buy and single sell allowed",
+    "asks for max profit from a price array",
+    "buy must occur before sell"
+  ],
+  "approach": "Track min_price as infinity and max_profit as 0. For each price, update max_profit = max(max_profit, price - min_price), then update min_price = min(min_price, price).",
+  "techniques": [
+    "single-pass",
+    "min-tracking"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Easy",
+  "tags": [
+    "array",
+    "greedy"
+  ]
+}

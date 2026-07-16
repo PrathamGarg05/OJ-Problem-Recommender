@@ -1,0 +1,22 @@
+{
+  "title": "Find the Duplicate Number",
+  "pattern": "Array \u00e2\u20ac\u201d Floyd's Cycle Detection (Treating Array as Linked List)",
+  "coreIdea": "Find the single duplicate in an array of n+1 integers in range [1,n] without modifying the array, by treating the array as an implicit linked list (where value at index points to next index) and applying Floyd's cycle detection to find the cycle's entry point.",
+  "recognitionCues": [
+    "array of n+1 integers in range [1,n], exactly one duplicate guaranteed",
+    "O(1) space and no array modification typically required, ruling out sorting or hashset"
+  ],
+  "approach": "Treat arr[i] as a pointer to index arr[i], forming an implicit linked list with a cycle (since duplicate causes two indices to point to the same next index). Use fast/slow pointers to detect the cycle's meeting point, then reset one pointer to start and advance both one step at a time until they meet again \u00e2\u20ac\u201d that meeting point is the duplicate value.",
+  "techniques": [
+    "floyds-cycle-detection",
+    "implicit-linked-list"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "array",
+    "two-pointers",
+    "cycle-detection"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Sort Colors (Dutch National Flag)",
+  "pattern": "Array \u00e2\u20ac\u201d Three-Way Partitioning (Dutch National Flag)",
+  "coreIdea": "Sort an array containing only 0s, 1s, and 2s in a single pass using three pointers that partition the array into three regions (0s, 1s, 2s) without using a general sorting algorithm.",
+  "recognitionCues": [
+    "array contains only a small fixed set of distinct values (e.g., 0,1,2)",
+    "single-pass O(n) in-place solution expected, ruling out counting sort with two passes"
+  ],
+  "approach": "Maintain low, mid, high pointers. If arr[mid]==0, swap with arr[low], increment both low and mid. If arr[mid]==1, just increment mid. If arr[mid]==2, swap with arr[high], decrement high (don't increment mid, since the swapped-in element needs to be checked).",
+  "techniques": [
+    "three-way-partitioning",
+    "dutch-national-flag"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "array",
+    "sorting",
+    "in-place"
+  ]
+}

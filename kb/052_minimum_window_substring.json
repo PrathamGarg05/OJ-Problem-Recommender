@@ -1,0 +1,23 @@
+{
+  "title": "Minimum Window Substring",
+  "pattern": "Sliding Window (variable size) \u00e2\u20ac\u201d Two Frequency Maps",
+  "coreIdea": "Find the smallest substring of one string that contains all characters (with counts) of another string, by expanding the window until it satisfies the requirement, then shrinking from the left to find the minimal valid window.",
+  "recognitionCues": [
+    "two strings given, one is a 'pattern' to be fully contained",
+    "asks for minimum-length substring satisfying a coverage condition"
+  ],
+  "approach": "Build a frequency map of required characters. Expand right pointer, decrementing counts in a window-frequency map, tracking how many required characters are fully satisfied. Once all satisfied, try shrinking left pointer while still valid, updating the minimum window seen, until a required character becomes unsatisfied again.",
+  "techniques": [
+    "sliding-window",
+    "two-pointer",
+    "hashmap"
+  ],
+  "timeComplexity": "O(n + m)",
+  "spaceComplexity": "O(charset size)",
+  "difficulty": "Hard",
+  "tags": [
+    "strings",
+    "sliding-window",
+    "hashmap"
+  ]
+}

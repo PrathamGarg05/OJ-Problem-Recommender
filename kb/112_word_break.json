@@ -1,0 +1,22 @@
+{
+  "title": "Word Break",
+  "pattern": "Dynamic Programming \u00e2\u20ac\u201d 1D DP with Dictionary Lookup",
+  "coreIdea": "Determine if a string can be segmented into a sequence of dictionary words by building a DP array where dp[i] represents whether the prefix of length i can be fully segmented, checking all possible last-word boundaries.",
+  "recognitionCues": [
+    "asks if a string can be split into valid dictionary words",
+    "brute force recursion with overlapping subproblems hints at DP"
+  ],
+  "approach": "Create dp array of size n+1, dp[0]=true (empty string is trivially segmentable). For each position i, check all j < i: if dp[j] is true AND substring(j, i) exists in the dictionary (using a hashset for O(1) lookup), set dp[i] = true.",
+  "techniques": [
+    "1d-dp",
+    "hashset-lookup"
+  ],
+  "timeComplexity": "O(n^2) or O(n^2 * avg word length) depending on substring check",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Medium",
+  "tags": [
+    "dp",
+    "strings",
+    "hashset"
+  ]
+}

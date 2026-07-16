@@ -1,0 +1,23 @@
+{
+  "title": "Group Anagrams",
+  "pattern": "String \u00e2\u20ac\u201d Hashmap with Canonical Key",
+  "coreIdea": "Group words that are anagrams of each other by mapping each word to a canonical representation (its sorted character sequence), so anagrams naturally collide to the same hashmap key.",
+  "recognitionCues": [
+    "list of strings given, asks to group by anagram relationship",
+    "order within a group doesn't matter"
+  ],
+  "approach": "For each word, sort its characters to form a key (or use a character-count tuple as key for better complexity). Use a hashmap from key to list of original words. Append each word to its key's list. Return the hashmap's values.",
+  "techniques": [
+    "hashmap",
+    "sorting-as-key",
+    "canonical-form"
+  ],
+  "timeComplexity": "O(n * k log k) where k is max word length, or O(n*k) with count-based key",
+  "spaceComplexity": "O(n * k)",
+  "difficulty": "Medium",
+  "tags": [
+    "strings",
+    "hashmap",
+    "sorting"
+  ]
+}

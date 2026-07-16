@@ -1,0 +1,20 @@
+{
+  "title": "Number of 1 Bits",
+  "pattern": "Bit Manipulation \u00e2\u20ac\u201d Brian Kernighan's Algorithm",
+  "coreIdea": "Count the number of set bits (1s) in an integer's binary representation by repeatedly clearing the lowest set bit using n & (n-1), which removes exactly one 1-bit per operation, counting iterations until n becomes 0.",
+  "recognitionCues": [
+    "asks to count set bits / population count of a number",
+    "efficient solution expected over checking each of 32 bits individually"
+  ],
+  "approach": "Initialize count to 0. While n is not 0, do n = n & (n-1) (clears the lowest set bit) and increment count. Return count once n becomes 0.",
+  "techniques": [
+    "bit-manipulation",
+    "brian-kernighans-algorithm"
+  ],
+  "timeComplexity": "O(number of set bits), at most O(32)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Easy",
+  "tags": [
+    "bit-manipulation"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Merge K Sorted Lists",
+  "pattern": "Heap \u00e2\u20ac\u201d K-way Merge",
+  "coreIdea": "Merge k sorted linked lists into one sorted list efficiently by using a min-heap to always extract the smallest head among all list pointers, avoiding a slower pairwise merge.",
+  "recognitionCues": [
+    "multiple (k) sorted structures given to merge into one",
+    "asks for an efficient merge better than repeated pairwise merging"
+  ],
+  "approach": "Push the head node of each of the k lists into a min-heap (ordered by value). Repeatedly pop the smallest node, append it to the result list, and if that node has a next node, push it into the heap. Continue until heap is empty.",
+  "techniques": [
+    "min-heap",
+    "priority-queue",
+    "k-way-merge"
+  ],
+  "timeComplexity": "O(n log k) where n is total number of nodes",
+  "spaceComplexity": "O(k) for the heap",
+  "difficulty": "Hard",
+  "tags": [
+    "heap",
+    "linked-list",
+    "priority-queue"
+  ]
+}

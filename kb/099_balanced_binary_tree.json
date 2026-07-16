@@ -1,0 +1,23 @@
+{
+  "title": "Balanced Binary Tree",
+  "pattern": "Tree \u00e2\u20ac\u201d Height Check with Early Termination",
+  "coreIdea": "Check if a binary tree is height-balanced (left and right subtree heights differ by at most 1 at every node) using a single bottom-up recursive pass that returns -1 as a sentinel to signal imbalance found anywhere, avoiding redundant height recomputation.",
+  "recognitionCues": [
+    "asks if a tree is height-balanced at EVERY node, not just at root",
+    "naive approach recomputes height repeatedly, O(n^2); problem hints at O(n) single-pass"
+  ],
+  "approach": "Define a recursive function returning height, or -1 if any subtree is already found unbalanced. At each node, get left and right heights recursively; if either is -1 or their difference exceeds 1, return -1 immediately (propagating the imbalance signal upward). Otherwise return 1 + max(left, right).",
+  "techniques": [
+    "recursion",
+    "tree-traversal",
+    "sentinel-value"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(h) recursion stack",
+  "difficulty": "Easy",
+  "tags": [
+    "tree",
+    "binary-tree",
+    "recursion"
+  ]
+}

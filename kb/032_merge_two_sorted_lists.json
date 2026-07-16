@@ -1,0 +1,21 @@
+{
+  "title": "Merge Two Sorted Lists",
+  "pattern": "Linked List \u00e2\u20ac\u201d Two Pointer Merge",
+  "coreIdea": "Merge two sorted linked lists into one sorted list by comparing the current nodes of both lists and attaching the smaller one, advancing that list's pointer, until one list is exhausted.",
+  "recognitionCues": [
+    "two sorted linked lists given",
+    "asks to merge into a single sorted list"
+  ],
+  "approach": "Use a dummy head node and a tail pointer. Compare current nodes of both lists, attach the smaller to tail, advance that list's pointer and tail. Repeat until one list is empty, then attach the remaining non-empty list.",
+  "techniques": [
+    "two-pointers",
+    "linked-list-manipulation"
+  ],
+  "timeComplexity": "O(m + n)",
+  "spaceComplexity": "O(1) excluding output list",
+  "difficulty": "Easy",
+  "tags": [
+    "linked-list",
+    "two-pointers"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Design Underground System",
+  "pattern": "Design \u00e2\u20ac\u201d Hashmap-based Event Tracking",
+  "coreIdea": "Track passenger check-ins and check-outs across stations to compute average travel time between station pairs, using one hashmap to store in-progress trips (keyed by passenger id) and another to accumulate total time and count per station pair.",
+  "recognitionCues": [
+    "asks to design a system tracking paired start/end events over time",
+    "requires maintaining running averages keyed by a combination of two entities (station pairs)"
+  ],
+  "approach": "On checkIn, store {passengerId: (station, time)}. On checkOut, retrieve the check-in record, compute travel time, update a hashmap keyed by (startStation, endStation) with accumulated total time and trip count, then remove the passenger's check-in record. getAverageTime simply divides total time by count for the given station pair.",
+  "techniques": [
+    "hashmap",
+    "design",
+    "event-tracking"
+  ],
+  "timeComplexity": "O(1) for all operations",
+  "spaceComplexity": "O(active passengers + station pairs)",
+  "difficulty": "Medium",
+  "tags": [
+    "design",
+    "hashmap"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Time Based Key-Value Store",
+  "pattern": "Design \u00e2\u20ac\u201d Hashmap of Sorted Lists with Binary Search",
+  "coreIdea": "Support storing multiple timestamped values per key and retrieving the value with the largest timestamp <= a queried timestamp, using binary search on a per-key list of (timestamp, value) pairs kept in insertion (naturally sorted) order.",
+  "recognitionCues": [
+    "key-value store where values are versioned by timestamp",
+    "asks for 'most recent value at or before a given time', not exact match"
+  ],
+  "approach": "Maintain a hashmap from key to a list of (timestamp, value) pairs, appended in increasing timestamp order (since set calls are assumed non-decreasing in timestamp). For get, binary search the key's list for the rightmost timestamp <= queried timestamp, return its value (or empty string if none found).",
+  "techniques": [
+    "hashmap",
+    "binary-search",
+    "design"
+  ],
+  "timeComplexity": "O(1) for set, O(log n) for get",
+  "spaceComplexity": "O(total set calls)",
+  "difficulty": "Medium",
+  "tags": [
+    "design",
+    "binary-search",
+    "hashmap"
+  ]
+}

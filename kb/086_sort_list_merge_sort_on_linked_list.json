@@ -1,0 +1,23 @@
+{
+  "title": "Sort List (Merge Sort on Linked List)",
+  "pattern": "Linked List \u00e2\u20ac\u201d Merge Sort (Divide and Conquer)",
+  "coreIdea": "Sort a linked list in O(n log n) time using merge sort adapted for linked lists: find the middle using fast/slow pointers to split the list, recursively sort both halves, then merge them like the standard merge-two-sorted-lists problem.",
+  "recognitionCues": [
+    "asks to sort a linked list with O(n log n) time and typically O(1) extra space (excluding recursion) expected",
+    "rules out converting to array and sorting"
+  ],
+  "approach": "Base case: if list has 0 or 1 nodes, return as-is. Find middle using fast/slow pointers, split list into two halves. Recursively sort each half. Merge the two sorted halves using the standard two-pointer merge technique, returning the merged sorted list.",
+  "techniques": [
+    "merge-sort",
+    "fast-slow-pointers",
+    "divide-and-conquer"
+  ],
+  "timeComplexity": "O(n log n)",
+  "spaceComplexity": "O(log n) recursion stack",
+  "difficulty": "Medium",
+  "tags": [
+    "linked-list",
+    "merge-sort",
+    "divide-and-conquer"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Reverse Linked List",
+  "pattern": "Linked List \u00e2\u20ac\u201d In-place Pointer Reversal",
+  "coreIdea": "Reverse the direction of a singly linked list in-place by iterating through and flipping each node's next pointer to point to its previous node instead.",
+  "recognitionCues": [
+    "asks to reverse a linked list",
+    "in-place, O(1) space typically expected"
+  ],
+  "approach": "Maintain prev as null and current as head. At each step, store next node, set current.next = prev, move prev to current, move current to the stored next node. Continue until current is null; prev is the new head.",
+  "techniques": [
+    "iterative-pointer-reversal"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Easy",
+  "tags": [
+    "linked-list",
+    "pointers"
+  ]
+}

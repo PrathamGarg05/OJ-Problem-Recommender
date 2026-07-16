@@ -1,0 +1,19 @@
+{
+  "title": "Min Cost Climbing Stairs",
+  "pattern": "Dynamic Programming \u00e2\u20ac\u201d 1D DP with Cost Accumulation",
+  "coreIdea": "Find the minimum cost to reach the top of a staircase (starting from step 0 or 1, moving 1 or 2 steps at a time, paying the cost of the step you leave from), by building up the minimum cost to reach each step from the two previous steps.",
+  "recognitionCues": [
+    "staircase/step problem similar to climbing stairs but with an associated cost array",
+    "asks for MINIMUM cost, not just count of ways"
+  ],
+  "approach": "dp[i] represents min cost to reach step i. dp[0]=0, dp[1]=0 (can start at either). For each step i from 2 to n, dp[i] = min(dp[i-1] + cost[i-1], dp[i-2] + cost[i-2]). Answer is dp[n] (reaching just past the last step).",
+  "techniques": [
+    "1d-dp"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1) with variable tracking",
+  "difficulty": "Easy",
+  "tags": [
+    "dp"
+  ]
+}

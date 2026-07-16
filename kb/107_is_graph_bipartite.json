@@ -1,0 +1,24 @@
+{
+  "title": "Is Graph Bipartite",
+  "pattern": "Graph \u00e2\u20ac\u201d Two-Coloring via BFS/DFS",
+  "coreIdea": "Determine if a graph's nodes can be divided into two groups such that no edge connects nodes within the same group, by attempting to 2-color the graph via BFS/DFS; a conflict (adjacent nodes forced to the same color) means the graph is not bipartite.",
+  "recognitionCues": [
+    "asks if a graph can be divided into two independent sets / is bipartite",
+    "graph may be disconnected, requiring checks from multiple components"
+  ],
+  "approach": "Maintain a colors array (uncolored initially). For each uncolored node, start BFS/DFS assigning it color 0. For each neighbor, if uncolored, assign the opposite color and continue; if already colored, check it differs from the current node's color \u00e2\u20ac\u201d if not, the graph is not bipartite. Repeat for all disconnected components.",
+  "techniques": [
+    "bfs",
+    "dfs",
+    "graph-coloring"
+  ],
+  "timeComplexity": "O(V + E)",
+  "spaceComplexity": "O(V)",
+  "difficulty": "Medium",
+  "tags": [
+    "graph",
+    "bfs",
+    "dfs",
+    "bipartite"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "3Sum",
+  "pattern": "Array \u00e2\u20ac\u201d Sort + Two Pointers",
+  "coreIdea": "Find all unique triplets that sum to zero by sorting the array first, then fixing one element and using two pointers on the remaining sorted portion to find pairs summing to the negative of the fixed element.",
+  "recognitionCues": [
+    "asks for triplets/combinations summing to a target",
+    "duplicates in output must be avoided",
+    "brute force is O(n^3), hints at O(n^2) with sorting"
+  ],
+  "approach": "Sort the array. For each index i, skip duplicates, then use two pointers (left = i+1, right = end) to find pairs where arr[i]+arr[left]+arr[right] == 0, moving pointers inward and skipping duplicate values as matches are found.",
+  "techniques": [
+    "sorting",
+    "two-pointers"
+  ],
+  "timeComplexity": "O(n^2)",
+  "spaceComplexity": "O(1) excluding output",
+  "difficulty": "Medium",
+  "tags": [
+    "array",
+    "two-pointers",
+    "sorting"
+  ]
+}

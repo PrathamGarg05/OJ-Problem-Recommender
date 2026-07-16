@@ -1,0 +1,21 @@
+{
+  "title": "Rotate Array",
+  "pattern": "Array \u00e2\u20ac\u201d In-place Rotation via Reversal",
+  "coreIdea": "Rotate an array to the right by k steps in-place using O(1) extra space, by reversing the entire array, then reversing each of the two resulting segments (first k and remaining n-k elements) separately.",
+  "recognitionCues": [
+    "asks to rotate an array in-place with O(1) extra space explicitly required",
+    "naive approach (extra array or repeated single shifts) hinted to be improved"
+  ],
+  "approach": "Normalize k = k % n. Reverse the entire array. Reverse the first k elements. Reverse the remaining n-k elements. This three-reversal trick produces the rotated array in-place.",
+  "techniques": [
+    "array-reversal",
+    "in-place"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "array",
+    "in-place"
+  ]
+}

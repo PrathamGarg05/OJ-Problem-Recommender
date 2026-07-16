@@ -1,0 +1,23 @@
+{
+  "title": "Longest Increasing Subsequence",
+  "pattern": "Dynamic Programming \u00e2\u20ac\u201d DP with Binary Search Optimization",
+  "coreIdea": "Find the length of the longest strictly increasing subsequence in an array. The naive approach compares every pair; the optimized approach maintains a list of smallest tail values for increasing subsequences of each length, using binary search to place new elements.",
+  "recognitionCues": [
+    "asks for longest increasing/decreasing subsequence",
+    "elements need not be contiguous",
+    "strictly or non-strictly increasing condition specified"
+  ],
+  "approach": "Naive O(n^2): dp[i] = length of LIS ending at i, computed by checking all j < i where arr[j] < arr[i]. Optimized O(n log n): maintain a 'tails' array, for each element use binary search to find its position (replace or extend), final length of tails array is the answer.",
+  "techniques": [
+    "1d-dp",
+    "binary-search-optimization"
+  ],
+  "timeComplexity": "O(n^2) naive, O(n log n) optimized",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Medium",
+  "tags": [
+    "dp",
+    "binary-search",
+    "subsequence"
+  ]
+}

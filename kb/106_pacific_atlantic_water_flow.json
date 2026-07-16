@@ -1,0 +1,25 @@
+{
+  "title": "Pacific Atlantic Water Flow",
+  "pattern": "Graph \u00e2\u20ac\u201d Multi-source DFS/BFS from Boundaries (Reverse Flow)",
+  "coreIdea": "Find cells from which water can flow to both the Pacific and Atlantic oceans by reversing the problem: run DFS/BFS from all Pacific-adjacent border cells and separately from all Atlantic-adjacent border cells (flowing 'uphill' since water flows to lower/equal height), then intersect the two reachable sets.",
+  "recognitionCues": [
+    "grid problem with two 'target' boundaries (opposite edges)",
+    "flow/reachability condition based on height comparison between cells",
+    "reversing the search direction from boundaries inward is the key insight"
+  ],
+  "approach": "Run multi-source DFS/BFS starting from all cells adjacent to the Pacific (top and left borders), moving to a neighbor only if its height >= current height (reverse flow), marking reachable cells. Repeat separately for Atlantic (bottom and right borders). The answer is all cells marked reachable in BOTH searches.",
+  "techniques": [
+    "multi-source-dfs",
+    "multi-source-bfs",
+    "grid-traversal"
+  ],
+  "timeComplexity": "O(rows * cols)",
+  "spaceComplexity": "O(rows * cols)",
+  "difficulty": "Medium",
+  "tags": [
+    "graph",
+    "dfs",
+    "bfs",
+    "grid"
+  ]
+}

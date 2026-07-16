@@ -1,0 +1,21 @@
+{
+  "title": "House Robber",
+  "pattern": "Dynamic Programming \u00e2\u20ac\u201d 1D DP with Adjacent Exclusion",
+  "coreIdea": "Maximize total loot from robbing houses in a row without robbing two adjacent houses, by at each house choosing the better of skipping it (keep previous best) or robbing it (current value plus best from two houses back).",
+  "recognitionCues": [
+    "asks to maximize a sum subject to 'cannot pick two adjacent elements' constraint",
+    "array represents values at positions in a row"
+  ],
+  "approach": "Track prev1 (best up to previous house) and prev2 (best up to two houses back). For each house, current = max(prev1, prev2 + house_value), then shift tracking variables forward.",
+  "techniques": [
+    "1d-dp",
+    "adjacent-exclusion"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "dp",
+    "array"
+  ]
+}

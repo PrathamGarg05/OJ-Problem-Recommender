@@ -1,0 +1,22 @@
+{
+  "title": "First Missing Positive",
+  "pattern": "Array \u00e2\u20ac\u201d In-place Index Mapping (Cyclic Sort)",
+  "coreIdea": "Find the smallest missing positive integer in O(n) time and O(1) space by placing each number in its 'correct' index position (value v goes to index v-1) via swapping, then scanning for the first index whose value doesn't match its expected position.",
+  "recognitionCues": [
+    "asks for smallest missing positive integer",
+    "O(n) time and O(1) space explicitly required, ruling out sorting or a hashset"
+  ],
+  "approach": "For each index i, while arr[i] is in valid range [1, n] and arr[arr[i]-1] != arr[i], swap arr[i] with arr[arr[i]-1] to place it at its correct position. After this placement pass, scan the array; the first index i where arr[i] != i+1 gives the answer i+1. If all match, answer is n+1.",
+  "techniques": [
+    "cyclic-sort",
+    "in-place-index-mapping"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Hard",
+  "tags": [
+    "array",
+    "in-place",
+    "cyclic-sort"
+  ]
+}

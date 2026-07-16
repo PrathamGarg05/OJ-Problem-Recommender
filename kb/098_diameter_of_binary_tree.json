@@ -1,0 +1,23 @@
+{
+  "title": "Diameter of Binary Tree",
+  "pattern": "Tree \u00e2\u20ac\u201d Recursive Height with Global Max Tracking",
+  "coreIdea": "Find the longest path between any two nodes (measured in edges) by computing, at each node, the sum of its left and right subtree heights, tracking the maximum such sum globally, while returning height upward for the parent's calculation.",
+  "recognitionCues": [
+    "asks for the longest path/diameter of a tree, not restricted to passing through root",
+    "similar structure to max path sum but for path LENGTH not value sum"
+  ],
+  "approach": "Define a recursive height function that also updates a global diameter variable: at each node, compute leftHeight and rightHeight recursively, update global max diameter with leftHeight + rightHeight, then return 1 + max(leftHeight, rightHeight) to the parent.",
+  "techniques": [
+    "recursion",
+    "tree-traversal",
+    "global-max-tracking"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(h) recursion stack",
+  "difficulty": "Easy",
+  "tags": [
+    "tree",
+    "binary-tree",
+    "recursion"
+  ]
+}

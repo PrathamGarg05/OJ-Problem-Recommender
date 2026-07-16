@@ -1,0 +1,25 @@
+{
+  "title": "Implement strStr() using KMP",
+  "pattern": "String Matching \u00e2\u20ac\u201d Knuth-Morris-Pratt Algorithm",
+  "coreIdea": "Find the first occurrence of a pattern in a text in O(n+m) by precomputing a 'longest proper prefix which is also a suffix' (LPS) array for the pattern, allowing the search to skip re-examining characters after a mismatch instead of restarting from scratch.",
+  "recognitionCues": [
+    "string matching/substring search problem",
+    "explicitly asks for better than O(n*m) brute force",
+    "pattern may have repeating structure that naive search re-checks"
+  ],
+  "approach": "Build LPS array for the pattern: for each position, the length of the longest proper prefix that's also a suffix of the pattern up to that position. During search, maintain pointers into text and pattern; on mismatch, use the LPS array to shift the pattern pointer instead of restarting text pointer, avoiding redundant comparisons.",
+  "techniques": [
+    "kmp",
+    "lps-array",
+    "string-matching"
+  ],
+  "timeComplexity": "O(n + m)",
+  "spaceComplexity": "O(m) for LPS array",
+  "difficulty": "Hard",
+  "tags": [
+    "strings",
+    "kmp",
+    "advanced-string",
+    "pattern-matching"
+  ]
+}

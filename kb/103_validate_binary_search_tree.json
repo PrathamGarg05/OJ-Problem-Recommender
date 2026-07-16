@@ -1,0 +1,22 @@
+{
+  "title": "Validate Binary Search Tree",
+  "pattern": "Tree \u00e2\u20ac\u201d Recursive Bounds Checking",
+  "coreIdea": "Verify a binary tree satisfies BST property (all left descendants smaller, all right descendants greater than any node) by recursively passing down a valid (min, max) range for each node, rather than only checking immediate children.",
+  "recognitionCues": [
+    "asks to validate BST property across the ENTIRE subtree, not just immediate parent-child relationships",
+    "a common bug is only checking node vs immediate children, missing deeper violations"
+  ],
+  "approach": "Recursively pass a (lowerBound, upperBound) range to each call, initialized to (-infinity, +infinity) at root. A node is valid only if lowerBound < node.val < upperBound. Recurse left with updated upperBound = node.val, recurse right with updated lowerBound = node.val.",
+  "techniques": [
+    "recursion",
+    "bounds-propagation"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(h) recursion stack",
+  "difficulty": "Medium",
+  "tags": [
+    "tree",
+    "bst",
+    "recursion"
+  ]
+}

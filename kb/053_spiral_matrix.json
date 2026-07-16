@@ -1,0 +1,20 @@
+{
+  "title": "Spiral Matrix",
+  "pattern": "Matrix \u00e2\u20ac\u201d Boundary Simulation",
+  "coreIdea": "Traverse a matrix in spiral order by maintaining four shrinking boundaries (top, bottom, left, right) and moving right, down, left, up in sequence, shrinking the relevant boundary after each direction pass.",
+  "recognitionCues": [
+    "asks to traverse or generate a matrix in spiral/circular order"
+  ],
+  "approach": "Maintain top, bottom, left, right boundary pointers. Traverse left boundary row (top) left-to-right, then right boundary column top-to-bottom, then bottom row right-to-left (if still valid), then left column bottom-to-top (if still valid). Shrink each boundary after its pass and repeat until boundaries cross.",
+  "techniques": [
+    "boundary-simulation",
+    "matrix-traversal"
+  ],
+  "timeComplexity": "O(rows * cols)",
+  "spaceComplexity": "O(1) excluding output",
+  "difficulty": "Medium",
+  "tags": [
+    "matrix",
+    "simulation"
+  ]
+}

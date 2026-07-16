@@ -1,0 +1,23 @@
+{
+  "title": "Search in Rotated Sorted Array",
+  "pattern": "Binary Search \u00e2\u20ac\u201d Modified on Rotated Array",
+  "coreIdea": "Search for a target in a rotated sorted array in O(log n). At each step, determine which half of the current range is properly sorted, then check if the target lies within that sorted half to decide which half to continue searching.",
+  "recognitionCues": [
+    "array is sorted but rotated at an unknown pivot",
+    "asks for O(log n) search",
+    "no duplicate elements typically specified"
+  ],
+  "approach": "Standard binary search with extra logic: at each mid, check if left half (low to mid) is sorted. If sorted, check if target lies in that range; if yes search left, else search right. Mirror logic if right half is sorted instead.",
+  "techniques": [
+    "binary-search",
+    "rotated-array-logic"
+  ],
+  "timeComplexity": "O(log n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Medium",
+  "tags": [
+    "binary-search",
+    "array",
+    "rotated-array"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Valid Anagram",
+  "pattern": "String \u00e2\u20ac\u201d Character Frequency Counting",
+  "coreIdea": "Check if two strings are anagrams of each other by comparing their character frequency counts; if both strings have identical counts for every character, they're anagrams.",
+  "recognitionCues": [
+    "asks to check if two strings are anagrams (simpler standalone version of Group Anagrams)",
+    "commonly asked as a warm-up hashmap/array-counting problem"
+  ],
+  "approach": "If lengths differ, return false immediately. Build a frequency array/hashmap by incrementing counts for characters in the first string and decrementing for the second. Return true only if all counts end at zero (or compare two separately built frequency maps for equality).",
+  "techniques": [
+    "frequency-counting",
+    "hashmap"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(charset size)",
+  "difficulty": "Easy",
+  "tags": [
+    "strings",
+    "hashmap"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Same Tree",
+  "pattern": "Tree \u00e2\u20ac\u201d Simultaneous Recursive Comparison",
+  "coreIdea": "Determine if two binary trees are structurally identical with the same node values, by recursively comparing corresponding nodes in both trees simultaneously.",
+  "recognitionCues": [
+    "two trees given for comparison",
+    "asks if they are identical in structure and values"
+  ],
+  "approach": "Base cases: if both nodes are null, return true; if only one is null, return false. Otherwise, return true only if current values match AND left subtrees match AND right subtrees match (recursively).",
+  "techniques": [
+    "recursion",
+    "tree-traversal"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(h) recursion stack",
+  "difficulty": "Easy",
+  "tags": [
+    "tree",
+    "binary-tree",
+    "recursion"
+  ]
+}

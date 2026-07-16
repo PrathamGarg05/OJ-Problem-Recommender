@@ -1,0 +1,24 @@
+{
+  "title": "Rotting Oranges",
+  "pattern": "Graph \u00e2\u20ac\u201d Multi-source BFS on Grid",
+  "coreIdea": "Find the minimum time for all fresh oranges to rot, given that rot spreads to adjacent cells each minute from all currently rotten oranges simultaneously. Starting BFS from all initially rotten cells at once (multi-source) correctly models simultaneous spread.",
+  "recognitionCues": [
+    "grid with a state that spreads to neighbors over discrete time steps",
+    "asks for minimum time for a condition to spread everywhere or determine impossibility",
+    "multiple starting points spread simultaneously"
+  ],
+  "approach": "Add all initially rotten cells to a queue, and count fresh oranges. Run BFS level by level, treating each level as one minute; at each level, spread rot to fresh neighbors, decrementing fresh count and enqueueing newly rotten cells. Track minutes elapsed. Return minutes if fresh count reaches 0, else -1.",
+  "techniques": [
+    "multi-source-bfs",
+    "grid-traversal"
+  ],
+  "timeComplexity": "O(rows * cols)",
+  "spaceComplexity": "O(rows * cols) for queue",
+  "difficulty": "Medium",
+  "tags": [
+    "graph",
+    "bfs",
+    "grid",
+    "multi-source-bfs"
+  ]
+}

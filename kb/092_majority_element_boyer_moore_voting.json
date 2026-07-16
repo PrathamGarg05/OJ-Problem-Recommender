@@ -1,0 +1,20 @@
+{
+  "title": "Majority Element (Boyer-Moore Voting)",
+  "pattern": "Array \u00e2\u20ac\u201d Boyer-Moore Voting Algorithm",
+  "coreIdea": "Find the element appearing more than n/2 times in O(1) space by maintaining a candidate and a counter; the counter increments on matching the candidate and decrements otherwise, resetting the candidate when the counter hits zero.",
+  "recognitionCues": [
+    "asks for an element that appears more than n/2 times (guaranteed to exist)",
+    "O(1) space explicitly hinted, ruling out hashmap counting"
+  ],
+  "approach": "Initialize candidate as first element, count as 0. For each element, if count is 0, set candidate to current element. Increment count if element equals candidate, else decrement. The final candidate is the majority element (guaranteed to exist per problem constraints).",
+  "techniques": [
+    "boyer-moore-voting"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Easy",
+  "tags": [
+    "array",
+    "voting-algorithm"
+  ]
+}

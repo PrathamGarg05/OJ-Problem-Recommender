@@ -1,0 +1,23 @@
+{
+  "title": "Regular Expression Matching",
+  "pattern": "Dynamic Programming \u00e2\u20ac\u201d DP on Strings with Pattern Matching",
+  "coreIdea": "Determine if a string matches a pattern containing '.' (any character) and '*' (zero or more of preceding character), using a 2D DP table where each cell represents whether a prefix of the string matches a prefix of the pattern.",
+  "recognitionCues": [
+    "pattern matching with special wildcard characters ('.', '*')",
+    "asks for full-string match, not just substring presence"
+  ],
+  "approach": "Build dp[i][j] representing whether s[0..i) matches p[0..j). Base case dp[0][0]=true. For '*' in pattern, consider matching zero occurrences (dp[i][j-2]) or one more occurrence if characters match (dp[i-1][j] when s[i-1] matches p[j-2]). For '.' or exact match, dp[i][j] = dp[i-1][j-1].",
+  "techniques": [
+    "2d-dp",
+    "string-matching"
+  ],
+  "timeComplexity": "O(m*n)",
+  "spaceComplexity": "O(m*n)",
+  "difficulty": "Hard",
+  "tags": [
+    "dp",
+    "strings",
+    "advanced-dp",
+    "pattern-matching"
+  ]
+}

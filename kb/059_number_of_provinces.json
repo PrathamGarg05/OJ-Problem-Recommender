@@ -1,0 +1,24 @@
+{
+  "title": "Number of Provinces",
+  "pattern": "Union-Find (Disjoint Set)",
+  "coreIdea": "Count the number of connected groups of cities given a connectivity matrix, by using union-find to merge connected cities into the same set and counting the number of distinct sets at the end.",
+  "recognitionCues": [
+    "connectivity/adjacency matrix given between elements",
+    "asks for number of connected groups/clusters",
+    "union-find is a strong alternative to BFS/DFS here"
+  ],
+  "approach": "Initialize a parent array where each city is its own parent. For each pair (i,j) marked connected in the matrix, union their sets (find each root, link one root to the other). Count the number of distinct roots remaining at the end (cities where find(i) == i).",
+  "techniques": [
+    "union-find",
+    "disjoint-set",
+    "path-compression"
+  ],
+  "timeComplexity": "O(n^2 * a(n)) where a is inverse Ackermann (effectively constant)",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Medium",
+  "tags": [
+    "union-find",
+    "graph",
+    "matrix"
+  ]
+}

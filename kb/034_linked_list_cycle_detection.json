@@ -1,0 +1,22 @@
+{
+  "title": "Linked List Cycle Detection",
+  "pattern": "Linked List \u00e2\u20ac\u201d Fast and Slow Pointers (Floyd's Cycle Detection)",
+  "coreIdea": "Detect if a linked list has a cycle by moving two pointers at different speeds; if a cycle exists, the faster pointer will eventually catch up to the slower one, otherwise it reaches the end.",
+  "recognitionCues": [
+    "asks to detect a cycle in a linked list",
+    "O(1) space constraint typically specified, ruling out a visited-set approach"
+  ],
+  "approach": "Initialize slow and fast pointers at head. Move slow by one step and fast by two steps each iteration. If they ever meet, a cycle exists. If fast reaches null (end of list), no cycle exists.",
+  "techniques": [
+    "fast-slow-pointers",
+    "floyds-cycle-detection"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Easy",
+  "tags": [
+    "linked-list",
+    "two-pointers",
+    "cycle-detection"
+  ]
+}

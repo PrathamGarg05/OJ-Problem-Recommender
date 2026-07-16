@@ -1,0 +1,22 @@
+{
+  "title": "Single Number",
+  "pattern": "Bit Manipulation \u00e2\u20ac\u201d XOR Cancellation",
+  "coreIdea": "Find the element that appears exactly once while every other element appears twice, by XOR-ing all elements together, since XOR-ing a number with itself cancels to zero, leaving only the unique element.",
+  "recognitionCues": [
+    "every element appears twice except one",
+    "asks for O(n) time and O(1) space, ruling out hashmap counting"
+  ],
+  "approach": "Initialize result to 0. XOR every element in the array into result. Pairs cancel out to 0 (a XOR a = 0), and XOR with 0 leaves a value unchanged, so the final result is the single unique element.",
+  "techniques": [
+    "bit-manipulation",
+    "xor"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Easy",
+  "tags": [
+    "bit-manipulation",
+    "array",
+    "xor"
+  ]
+}

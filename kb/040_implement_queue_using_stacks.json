@@ -1,0 +1,21 @@
+{
+  "title": "Implement Queue using Stacks",
+  "pattern": "Stack/Queue \u00e2\u20ac\u201d Two-Stack Simulation",
+  "coreIdea": "Simulate FIFO queue behavior using two LIFO stacks, where one stack handles incoming elements and the other, refilled only when empty, handles outgoing elements in reversed (correct FIFO) order.",
+  "recognitionCues": [
+    "asks to implement one data structure's behavior using only the other (queue via stacks, or stack via queues)"
+  ],
+  "approach": "Maintain input_stack and output_stack. Push always goes to input_stack. Pop/peek: if output_stack is empty, transfer all elements from input_stack to output_stack (reversing order), then pop/peek from output_stack.",
+  "techniques": [
+    "stack",
+    "amortized-analysis"
+  ],
+  "timeComplexity": "O(1) amortized per operation",
+  "spaceComplexity": "O(n)",
+  "difficulty": "Easy",
+  "tags": [
+    "stack",
+    "queue",
+    "design"
+  ]
+}

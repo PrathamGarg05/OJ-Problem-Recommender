@@ -1,0 +1,23 @@
+{
+  "title": "Design Twitter",
+  "pattern": "Design \u00e2\u20ac\u201d Heap + Hashmap for Feed Generation",
+  "coreIdea": "Design a simplified Twitter supporting posting tweets, following/unfollowing, and retrieving the 10 most recent tweets from a user's feed (self + followees), using a global timestamp counter and a max-heap to merge recent tweets across followed users.",
+  "recognitionCues": [
+    "asks to design a social feed / news feed system",
+    "requires merging multiple users' timestamped items and returning most recent k"
+  ],
+  "approach": "Store each user's tweets as a list of (timestamp, tweetId), and a set of followees per user. For getNewsFeed, gather the most recent tweets from the user and all followees, push them into a max-heap by timestamp, pop the top 10.",
+  "techniques": [
+    "heap",
+    "hashmap",
+    "design"
+  ],
+  "timeComplexity": "O(k log(f)) for feed retrieval where f is number of followees, k=10",
+  "spaceComplexity": "O(users + tweets)",
+  "difficulty": "Medium",
+  "tags": [
+    "design",
+    "heap",
+    "hashmap"
+  ]
+}

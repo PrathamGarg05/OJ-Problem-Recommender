@@ -1,0 +1,22 @@
+{
+  "title": "Move Zeroes",
+  "pattern": "Array \u00e2\u20ac\u201d Two Pointer In-place Compaction",
+  "coreIdea": "Move all zeroes in an array to the end while maintaining the relative order of non-zero elements, in-place, using a pointer that tracks the position to place the next non-zero element found.",
+  "recognitionCues": [
+    "asks to move a specific value to the end in-place",
+    "relative order of other elements must be preserved"
+  ],
+  "approach": "Maintain a pointer 'insertPos' starting at 0. Traverse the array; whenever a non-zero element is found, swap it with the element at insertPos, and increment insertPos. This naturally pushes zeroes toward the end while preserving order.",
+  "techniques": [
+    "two-pointers",
+    "in-place"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Easy",
+  "tags": [
+    "array",
+    "two-pointers",
+    "in-place"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Climbing Stairs",
+  "pattern": "Dynamic Programming \u00e2\u20ac\u201d Fibonacci-style 1D DP",
+  "coreIdea": "Count the number of distinct ways to climb n stairs taking 1 or 2 steps at a time, which follows the same recurrence as Fibonacci since the ways to reach step n equal ways to reach step n-1 plus ways to reach step n-2.",
+  "recognitionCues": [
+    "asks to count number of distinct ways to reach a target using fixed step choices",
+    "recurrence resembles Fibonacci sequence"
+  ],
+  "approach": "Track two variables representing ways to reach the previous two steps (starting at 1,1 for steps 0 and 1). For each step from 2 to n, current = prev1 + prev2, then shift the tracking variables forward.",
+  "techniques": [
+    "1d-dp",
+    "fibonacci-pattern"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1) with variable tracking, O(n) with array",
+  "difficulty": "Easy",
+  "tags": [
+    "dp",
+    "fibonacci"
+  ]
+}

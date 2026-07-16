@@ -1,0 +1,23 @@
+{
+  "title": "Cheapest Flights Within K Stops",
+  "pattern": "Graph \u00e2\u20ac\u201d Modified Bellman-Ford (Bounded Relaxation)",
+  "coreIdea": "Find the cheapest price from source to destination using at most k stops, by running a Bellman-Ford-style relaxation limited to k+1 iterations, since each iteration corresponds to allowing one more edge/stop in the path.",
+  "recognitionCues": [
+    "shortest path problem with a limit on number of edges/stops used",
+    "Dijkstra alone doesn't directly respect the stop limit, hinting at Bellman-Ford variant"
+  ],
+  "approach": "Initialize distances array with infinity except source=0. Run exactly k+1 rounds of relaxation using a copy of the distance array each round (to avoid using updates from the same round), relaxing every edge if it improves the destination's distance. Return the final distance to target, or -1 if still infinity.",
+  "techniques": [
+    "bellman-ford",
+    "bounded-relaxation",
+    "dynamic-programming"
+  ],
+  "timeComplexity": "O(k * E)",
+  "spaceComplexity": "O(V)",
+  "difficulty": "Medium",
+  "tags": [
+    "graph",
+    "bellman-ford",
+    "shortest-path"
+  ]
+}

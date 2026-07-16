@@ -1,0 +1,22 @@
+{
+  "title": "Pow(x, n)",
+  "pattern": "Math \u00e2\u20ac\u201d Fast Exponentiation (Divide and Conquer)",
+  "coreIdea": "Compute x raised to power n in O(log n) instead of O(n) by recursively halving the exponent, using the identity x^n = (x^(n/2))^2, adjusting for odd exponents and negative n.",
+  "recognitionCues": [
+    "asks to compute a power efficiently",
+    "O(log n) expected instead of naive repeated multiplication"
+  ],
+  "approach": "Handle negative n by inverting x and negating n. Recursively compute half = power(x, n/2). If n is even, result is half*half. If odd, result is half*half*x. Base case: n=0 returns 1.",
+  "techniques": [
+    "divide-and-conquer",
+    "fast-exponentiation"
+  ],
+  "timeComplexity": "O(log n)",
+  "spaceComplexity": "O(log n) recursion stack, O(1) iterative",
+  "difficulty": "Medium",
+  "tags": [
+    "math",
+    "recursion",
+    "divide-and-conquer"
+  ]
+}

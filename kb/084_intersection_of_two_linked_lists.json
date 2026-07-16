@@ -1,0 +1,21 @@
+{
+  "title": "Intersection of Two Linked Lists",
+  "pattern": "Linked List \u00e2\u20ac\u201d Two Pointer Length Equalization",
+  "coreIdea": "Find the node where two linked lists intersect by having two pointers traverse both lists, switching to the other list's head upon reaching the end; this equalizes the distance traveled by both pointers by the time they'd meet at the intersection.",
+  "recognitionCues": [
+    "two linked lists given, asks for the exact node where they merge/intersect",
+    "O(1) extra space typically expected, ruling out a hashset of visited nodes"
+  ],
+  "approach": "Initialize two pointers at the heads of both lists. Advance both one step at a time; when a pointer reaches the end of its list, redirect it to the head of the OTHER list. Continue until both pointers point to the same node (the intersection) or both become null (no intersection).",
+  "techniques": [
+    "two-pointers",
+    "linked-list"
+  ],
+  "timeComplexity": "O(m + n)",
+  "spaceComplexity": "O(1)",
+  "difficulty": "Easy",
+  "tags": [
+    "linked-list",
+    "two-pointers"
+  ]
+}

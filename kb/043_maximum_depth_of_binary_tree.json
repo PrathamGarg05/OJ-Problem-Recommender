@@ -1,0 +1,22 @@
+{
+  "title": "Maximum Depth of Binary Tree",
+  "pattern": "Tree \u00e2\u20ac\u201d Simple Recursion",
+  "coreIdea": "Find the length of the longest path from root to a leaf by recursively computing the depth of left and right subtrees and taking the larger, plus one for the current node.",
+  "recognitionCues": [
+    "asks for height/depth of a tree",
+    "simplest possible recursive tree problem, often used as a warm-up"
+  ],
+  "approach": "Base case: if node is null, return 0. Otherwise, return 1 + max(maxDepth(left), maxDepth(right)).",
+  "techniques": [
+    "recursion",
+    "tree-traversal"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(h) recursion stack",
+  "difficulty": "Easy",
+  "tags": [
+    "tree",
+    "binary-tree",
+    "recursion"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Permutations",
+  "pattern": "Backtracking \u00e2\u20ac\u201d Swap or Visited-Tracking",
+  "coreIdea": "Generate all possible orderings of a given array. At each recursive step, choose an unused element to place next, recurse, then backtrack by marking it unused again to try other options.",
+  "recognitionCues": [
+    "asks to generate all arrangements/orderings",
+    "order matters, unlike subsets",
+    "output size is n! expected"
+  ],
+  "approach": "Use recursion with a 'used' boolean array or by swapping elements in place. At each step, try every unused element as the next position in the current permutation, recurse to fill remaining positions, then backtrack (mark unused / swap back) before trying the next choice.",
+  "techniques": [
+    "backtracking",
+    "recursion"
+  ],
+  "timeComplexity": "O(n! * n)",
+  "spaceComplexity": "O(n) recursion depth, O(n! * n) for output",
+  "difficulty": "Medium",
+  "tags": [
+    "backtracking",
+    "recursion",
+    "permutations"
+  ]
+}

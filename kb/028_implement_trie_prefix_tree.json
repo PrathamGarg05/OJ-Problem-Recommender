@@ -1,0 +1,22 @@
+{
+  "title": "Implement Trie (Prefix Tree)",
+  "pattern": "Trie \u00e2\u20ac\u201d Node-based Prefix Tree",
+  "coreIdea": "Design a data structure supporting efficient insert, search, and prefix-search operations on strings, by representing shared prefixes as shared paths in a tree where each node holds child pointers for each possible next character.",
+  "recognitionCues": [
+    "asks to design a structure supporting insert/search/startsWith for strings",
+    "efficient prefix matching required across many strings"
+  ],
+  "approach": "Each TrieNode holds a dictionary/array of children (one per character) and an is-end-of-word flag. Insert: walk/create nodes character by character, mark last node as end-of-word. Search: walk nodes matching each character, return true only if path exists and last node is marked end-of-word. StartsWith: same walk, but don't require end-of-word flag.",
+  "techniques": [
+    "trie",
+    "tree-node-design"
+  ],
+  "timeComplexity": "O(L) per operation, where L is word/prefix length",
+  "spaceComplexity": "O(total characters across all inserted words)",
+  "difficulty": "Medium",
+  "tags": [
+    "trie",
+    "design",
+    "strings"
+  ]
+}

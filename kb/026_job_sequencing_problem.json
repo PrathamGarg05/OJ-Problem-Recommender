@@ -1,0 +1,24 @@
+{
+  "title": "Job Sequencing Problem",
+  "pattern": "Greedy \u00e2\u20ac\u201d Deadline Scheduling",
+  "coreIdea": "Maximize total profit by scheduling jobs (each with a deadline and profit) into available time slots, where each slot holds one job. Sort jobs by profit descending, then greedily place each job in the latest available slot before its deadline.",
+  "recognitionCues": [
+    "jobs/tasks have deadlines and profits/values",
+    "asks to maximize total profit within scheduling constraints",
+    "each slot can hold only one job"
+  ],
+  "approach": "Sort jobs by profit in descending order. For each job, try to place it in the latest available time slot that is still before or at its deadline (search from deadline downward, or use a disjoint-set for efficiency). Mark that slot as filled and add profit if placed.",
+  "techniques": [
+    "greedy",
+    "sorting",
+    "deadline-scheduling"
+  ],
+  "timeComplexity": "O(n log n + n * maxDeadline) naive, O(n log n) with DSU optimization",
+  "spaceComplexity": "O(maxDeadline)",
+  "difficulty": "Medium",
+  "tags": [
+    "greedy",
+    "scheduling",
+    "sorting"
+  ]
+}

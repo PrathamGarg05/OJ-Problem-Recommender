@@ -1,0 +1,23 @@
+{
+  "title": "Merge Intervals",
+  "pattern": "Intervals \u00e2\u20ac\u201d Sort and Merge Overlaps",
+  "coreIdea": "Merge all overlapping intervals into their union by first sorting intervals by start time, then scanning through and merging the current interval into the last result interval whenever they overlap.",
+  "recognitionCues": [
+    "list of intervals given (start, end pairs)",
+    "asks to merge overlapping ones",
+    "brute force pairwise comparison hinted to be improved with sorting"
+  ],
+  "approach": "Sort intervals by start value. Initialize result with the first interval. For each subsequent interval, if its start is <= the end of the last interval in result, merge by updating that interval's end to the max of both ends. Otherwise, add it as a new separate interval.",
+  "techniques": [
+    "sorting",
+    "interval-merging"
+  ],
+  "timeComplexity": "O(n log n)",
+  "spaceComplexity": "O(n) for output",
+  "difficulty": "Medium",
+  "tags": [
+    "intervals",
+    "sorting",
+    "array"
+  ]
+}

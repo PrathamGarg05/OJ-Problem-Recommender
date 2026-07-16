@@ -1,0 +1,25 @@
+{
+  "title": "Binary Tree Maximum Path Sum",
+  "pattern": "Tree \u00e2\u20ac\u201d Recursive Path Aggregation",
+  "coreIdea": "Find the maximum sum path between any two nodes in a binary tree, where the path need not pass through the root. At each node, compute the max single-side contribution upward, while separately tracking the best 'through-node' path as a global maximum.",
+  "recognitionCues": [
+    "asks for max path sum, not restricted to root-to-leaf",
+    "tree contains negative values, requiring care about whether to include a branch",
+    "path can start and end anywhere"
+  ],
+  "approach": "Define a recursive function returning the max single-path sum extending from a node downward (ignoring negative contributions by taking max(0, subtree_sum)). At each node, update a global max using node.val + left_contribution + right_contribution (the 'through node' path), but return only node.val + max(left, right) upward to the parent.",
+  "techniques": [
+    "recursion",
+    "tree-traversal",
+    "global-max-tracking"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(h) recursion stack",
+  "difficulty": "Hard",
+  "tags": [
+    "tree",
+    "binary-tree",
+    "recursion",
+    "dp-on-tree"
+  ]
+}

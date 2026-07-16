@@ -1,0 +1,22 @@
+{
+  "title": "Symmetric Tree",
+  "pattern": "Tree \u00e2\u20ac\u201d Mirror Comparison via Recursion",
+  "coreIdea": "Check if a binary tree is a mirror of itself by recursively comparing the left subtree of one side against the right subtree of the other, and vice versa, at every level.",
+  "recognitionCues": [
+    "asks if a tree is symmetric/mirror-image around its center",
+    "requires comparing cross-pairs (left.left vs right.right, left.right vs right.left)"
+  ],
+  "approach": "Define a helper function comparing two nodes (starting with root.left and root.right). Return true if both are null. Return false if only one is null or values differ. Otherwise, recursively check (left.left vs right.right) AND (left.right vs right.left).",
+  "techniques": [
+    "recursion",
+    "tree-traversal"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(h) recursion stack",
+  "difficulty": "Easy",
+  "tags": [
+    "tree",
+    "binary-tree",
+    "recursion"
+  ]
+}
