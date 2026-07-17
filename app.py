@@ -3,6 +3,14 @@ import time
 from src.generate import generate_recommendations
 from src.retriever import retrieve
 
+def get_recommendation_label(distance):
+    if distance < 0.35:
+        return "🟢 Strong Recommendation"
+    elif distance < 0.45:
+        return "🟡 Good Recommendation"
+    else:
+        return "🔵 Related Topic"
+
 def recommend(query):
     with st.spinner("Searching similar problems..."):
         context = retrieve(query)
@@ -12,11 +20,17 @@ def recommend(query):
     st.subheader("Recommendations")
     st.markdown(recommendations.content)
 
-    with st.expander("Retrieved Context"):
-        if context["metadatas"]:
-            st.json(context["metadatas"][0])
-        else:
-            st.info("No context retrieved.")
+    if context["metadatas"] and context["metadatas"][0]:
+        for meta, dist in zip(context["metadatas"][0], context["distances"][0]):
+
+            with st.expander(
+                f"{meta['title']} • {get_recommendation_label(dist)}",
+                expanded=False,
+            ):
+                st.write(f"**Pattern:** {meta['pattern']}")
+                st.write(f"**Difficulty:** {meta['difficulty']}")
+                st.write(f"**Core Idea:** {meta['coreIdea']}")
+                st.write(f"**Techniques:** {', '.join(meta['techniques'])}")
 
 st.set_page_config(
     page_title="OJ Problem Recommender",
